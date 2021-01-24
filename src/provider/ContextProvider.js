@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 import Context from '~/context/StoreContext';
 
@@ -14,7 +14,7 @@ const ContextProvider = ({ children }) => {
     ],
   };
 
-  const [store, updateStore] = useState(initialStoreState);
+  const [store] = useState(initialStoreState);
 
   return (
     <Context.Provider

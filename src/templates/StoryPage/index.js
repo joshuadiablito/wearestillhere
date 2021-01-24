@@ -12,8 +12,8 @@ import {
 } from '~/utils/styles';
 import { StoryTitle, StoryDescription } from './styles';
 
-const StoryPage = ({ data }) => {
-  const story = data.shopifyStory;
+const StoryPage = () => {
+  const { stories } = useContext(newContext);
   return (
     <>
       <SEO title={story.title} description={story.description} />
@@ -39,56 +39,5 @@ const StoryPage = ({ data }) => {
     </>
   );
 };
-
-export const query = graphql`
-  query($handle: String!) {
-    shopifyStory(handle: { eq: $handle }) {
-      id
-      title
-      handle
-      storyType
-      description
-      descriptionHtml
-      shopifyId
-      options {
-        id
-        name
-        values
-      }
-      variants {
-        id
-        title
-        price
-        availableForSale
-        shopifyId
-        selectedOptions {
-          name
-          value
-        }
-      }
-      priceRange {
-        minVariantPrice {
-          amount
-          currencyCode
-        }
-        maxVariantPrice {
-          amount
-          currencyCode
-        }
-      }
-      images {
-        originalSrc
-        id
-        localFile {
-          childImageSharp {
-            fluid(maxWidth: 910) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
-            }
-          }
-        }
-      }
-    }
-  }
-`;
 
 export default StoryPage;

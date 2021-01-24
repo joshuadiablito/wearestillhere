@@ -1,5 +1,4 @@
-import React, { useContext } from 'react';
-import reduce from 'lodash/reduce';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 import { Container, MenuLink, Wrapper } from './styles';
