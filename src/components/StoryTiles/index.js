@@ -9,17 +9,20 @@ import { Grid, ShortDescription, StoryTile, Title } from './styles';
 const StoryTiles = () => {
   const { stories } = useContext(StoreContext);
 
+  console.log({ stories });
+
   return (
     <Grid>
-      {stories.map(({ node: { id, href, title, image, shortDescription } }) => (
-        <StoryTile key={id}>
-          <Link to={`/story/${href}`}>
-            <Img fluid={image.fluid} alt={title} />
-          </Link>
-          <Title>{title}</Title>
-          <ShortDescription>{shortDescription}</ShortDescription>
-        </StoryTile>
-      ))}
+      {stories &&
+        stories.map(({ id, href, title, image, shortDescription }) => (
+          <StoryTile key={id}>
+            <Link to={`/story/${href}-${id}`}>
+              <Img fluid={image} alt={title} />
+            </Link>
+            <Title>{title}</Title>
+            <ShortDescription>{shortDescription}</ShortDescription>
+          </StoryTile>
+        ))}
     </Grid>
   );
 };

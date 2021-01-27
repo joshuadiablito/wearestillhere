@@ -2,17 +2,14 @@ import React, { useState } from 'react';
 
 import Context from '~/context/StoreContext';
 
+import stories from './stories';
+
 const ContextProvider = ({ children }) => {
   let initialStoreState = {
-    stories: [
-      {
-        id: '',
-        title: '',
-        href: '',
-        shortDescription: '',
-      },
-    ],
+    stories,
   };
+
+  console.log({ initialStoreState });
 
   const [store] = useState(initialStoreState);
 

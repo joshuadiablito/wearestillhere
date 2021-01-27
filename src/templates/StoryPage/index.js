@@ -1,8 +1,8 @@
-import React from 'react';
-import { graphql } from 'gatsby';
+import React, { useContext } from 'react';
 
 import SEO from '~/components/seo';
-import StoryForm from '~/components/StoryForm';
+
+import StoreContext from '../../context/StoreContext';
 import {
   Img,
   Container,
@@ -13,7 +13,8 @@ import {
 import { StoryTitle, StoryDescription } from './styles';
 
 const StoryPage = () => {
-  const { stories } = useContext(newContext);
+  const { story } = useContext(StoreContext);
+
   return (
     <>
       <SEO title={story.title} description={story.description} />
