@@ -9,9 +9,9 @@ const ContextProvider = ({ children }) => {
     stories,
   };
 
-  console.log({ initialStoreState });
-
   const [store] = useState(initialStoreState);
+
+  console.log({ store });
 
   return (
     <Context.Provider

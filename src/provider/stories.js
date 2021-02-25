@@ -5,6 +5,7 @@ const stories = [
     href: 'florence',
     image: 'src/images/florence-small.jpg',
     fullImage: 'src/images/florence.jpg',
+    images: [],
     shortDescription: "Florence's photos",
   },
   {
@@ -13,6 +14,7 @@ const stories = [
     href: 'stephen',
     image: 'src/images/stephen-small.jpg',
     fullImage: 'src/images/stephen.jpg',
+    images: [],
     shortDescription: "Stephen's photos",
   },
   {
@@ -21,6 +23,7 @@ const stories = [
     href: 'jonathan',
     image: 'src/images/jonathan-small.jpg',
     fullImage: 'src/images/jonathan.jpg',
+    images: [],
     shortDescription: "Jonathan's photos",
   },
 ];

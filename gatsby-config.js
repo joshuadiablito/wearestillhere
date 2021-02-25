@@ -5,6 +5,7 @@ require('dotenv').config({
 });
 
 module.exports = {
+  pathPrefix: '/josh',
   siteMetadata: {
     title: `We Are Still Here - Photography Exhibition in Bristol, UK`,
     description: ``,
@@ -46,6 +47,14 @@ module.exports = {
         trackingId: 'UA-134421805-1',
         anonymize: true,
         respectDNT: true,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /images/, // See below to configure properly
+        },
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

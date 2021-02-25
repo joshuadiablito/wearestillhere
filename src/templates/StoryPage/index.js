@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { Fragment, useContext } from 'react';
 
 import SEO from '~/components/seo';
 
@@ -6,24 +6,41 @@ import StoreContext from '../../context/StoreContext';
 import {
   Img,
   Container,
+  MainContent,
   TwoColumnGrid,
   GridLeft,
   GridRight,
 } from '~/utils/styles';
 import { StoryTitle, StoryDescription } from './styles';
 
-const StoryPage = () => {
-  const { story } = useContext(StoreContext);
+const StoryPage = ({ location }) => {
+  const { store } = useContext(StoreContext);
+  const { pathname } = location;
+  const { stories } = store;
+
+  const [story] = stories.filter(({ href }) => `/story/${href}` === pathname);
+  // const [story] = stories;
+  console.log({ story });
+  if (!story) {
+    return null;
+  }
 
   return (
-    <>
+    <Fragment>
       <SEO title={story.title} description={story.description} />
       <Container>
+        <MainContent>
+          <Img
+            fluid={{ src: story.image }}
+            key={story.id}
+            alt={`${story.title} - ${story.shortDescription}`}
+          />
+        </MainContent>
         <TwoColumnGrid>
           <GridLeft>
             {story.images.map(image => (
               <Img
-                fluid={image.localFile.childImageSharp.fluid}
+                fluid={{ src: image.src }}
                 key={image.id}
                 alt={story.title}
               />
@@ -32,12 +49,12 @@ const StoryPage = () => {
           <GridRight>
             <StoryTitle>{story.title}</StoryTitle>
             <StoryDescription
-              dangerouslySetInnerHTML={{ __html: story.descriptionHtml }}
+              dangerouslySetInnerHTML={{ __html: story.shortDescription }}
             />
           </GridRight>
         </TwoColumnGrid>
       </Container>
-    </>
+    </Fragment>
   );
 };
 

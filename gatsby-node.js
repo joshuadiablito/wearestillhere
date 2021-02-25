@@ -6,7 +6,7 @@ exports.createPages = ({ graphql, actions }) => {
 
   stories.forEach(({ id, title, href, image, fullImage, shortDescription }) => {
     createPage({
-      path: `/story/${href}-${id}`,
+      path: `/story/${href}`,
       component: path.resolve(`./src/templates/StoryPage/index.js`),
       context: {
         stories,
