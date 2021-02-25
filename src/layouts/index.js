@@ -13,7 +13,7 @@ const Wrapper = styled.div`
   padding: 0px 1.0875rem 1.45rem;
 `;
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
+  const { site } = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
         siteMetadata {
@@ -22,8 +22,6 @@ const Layout = ({ children }) => {
       }
     }
   `);
-  console.log({ data });
-  const { site, file } = data;
 
   return (
     <ContextProvider>
@@ -31,6 +29,8 @@ const Layout = ({ children }) => {
       <Navigation siteTitle={site.siteMetadata.title} />
       <Wrapper>
         {children}
+        <br />
+        <br />
         <footer>&copy; {new Date().getFullYear()}</footer>
       </Wrapper>
     </ContextProvider>

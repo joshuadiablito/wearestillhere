@@ -1,12 +1,12 @@
+import { Global, css } from '@emotion/react';
 import React, { useState } from 'react';
-import Image from 'gatsby-image';
 import PropTypes from 'prop-types';
 
 import Logo from '../../images/logo-small.svg';
 
 import BurgerMenu from '../BurgerMenu';
 
-import { Container, MenuLink, MenuOverlay, Wrapper } from './styles';
+import { Container, MenuLink, MenuOverlay } from './styles';
 
 const Navigation = ({ logo, siteTitle }) => {
   const [isMenuOpen, setMenuOpen] = useState(false);
@@ -15,6 +15,13 @@ const Navigation = ({ logo, siteTitle }) => {
   }, [isMenuOpen]);
   return (
     <Container>
+      <Global
+        styles={css`
+          body {
+            overflow-x: hidden;
+          }
+        `}
+      />
       <a href="/" title="We Are Still Here">
         <Logo />
       </a>

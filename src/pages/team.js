@@ -28,7 +28,7 @@ const TeamPage = () => (
       recognises domestic violence as a crime. Her work has been exhibited in
       Europe, Asia and the States and published in international media. More
       information can be found{' '}
-      <a href="http://www.aspect-us.com/" target="_blank">
+      <a href="http://www.aspect-us.com/" rel="noreferrer" target="_blank">
         on her homepage
       </a>
     </p>
@@ -43,8 +43,8 @@ const TeamPage = () => (
       in a development context. More information can be found{' '}
       <a
         href="https://research-information.bris.ac.uk/en/persons/adrian-g-flint"
-        target="_blank"
         rel="noreferrer"
+        target="_blank"
       >
         on his homepage
       </a>
@@ -66,7 +66,11 @@ const TeamPage = () => (
       truth of being an HIV+ individual in 2020 and how life as an outcast has
       defined him and inspired his need for inclusion. More information can be
       found{' '}
-      <a href="http://www.martinburnswriteractivist.co.uk" target="_blank">
+      <a
+        href="http://www.martinburnswriteractivist.co.uk"
+        rel="noreferrer"
+        target="_blank"
+      >
         on his homepage
       </a>
     </p>

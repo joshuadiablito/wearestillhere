@@ -5,7 +5,6 @@ require('dotenv').config({
 });
 
 module.exports = {
-  pathPrefix: '/josh',
   siteMetadata: {
     title: `We Are Still Here - Photography Exhibition in Bristol, UK`,
     description: ``,

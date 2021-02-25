@@ -4,7 +4,7 @@ import { Link, useStaticQuery, graphql } from 'gatsby';
 import StoreContext from '../../context/StoreContext';
 import { Img } from '../../utils/styles';
 
-import { Grid, ShortDescription, StoryTile, Title } from './styles';
+import { Grid, StoryTile, Title } from './styles';
 
 const StoryTiles = () => {
   const {
@@ -28,26 +28,23 @@ const StoryTiles = () => {
     }
   `);
 
-  console.log({ stories });
-
   return (
     <Grid>
       {stories &&
         stories.map(({ id, href, title, smallImage, shortDescription }) => {
-          console.log('hellyaeah', { edges });
           const [image] = edges.filter(
             ({ node }) => node.fluid.originalName === smallImage
           );
 
-          console.log({ image });
-
           return (
             <StoryTile key={id}>
-              <Link to={`/story/${href}`}>
+              <Link
+                to={`/story/${href}`}
+                style={{ textDecoration: 'none', color: 'black' }}
+              >
                 <Img fluid={image.node.fluid} alt={title} />
+                <Title>{title}</Title>
               </Link>
-              <Title>{title}</Title>
-              <ShortDescription>{shortDescription}</ShortDescription>
             </StoryTile>
           );
         })}

@@ -17,10 +17,10 @@ const StoryPage = ({ location }) => {
   const { store } = useContext(StoreContext);
   const { pathname } = location;
   const { stories } = store;
+  const [story] = stories.filter(
+    ({ href }) => href === pathname.endsWith(href)
+  );
 
-  const [story] = stories.filter(({ href }) => `/story/${href}` === pathname);
-  // const [story] = stories;
-  console.log({ story });
   if (!story) {
     return null;
   }
