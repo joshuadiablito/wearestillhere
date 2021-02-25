@@ -15,38 +15,38 @@ export const Container = styled.div`
 `;
 
 export const OpenMenuButton = styled(MenuIcon)`
+  -webkit-touch-callout: none;
   cursor: pointer;
+  height: 40px;
   position: absolute;
   right: 12px;
-  width: 40px;
-  height: 40px;
   user-select: none;
-  -webkit-touch-callout: none;
+  width: 40px;
 `;
 export const CloseMenuButton = styled(CloseIcon)`
+  -webkit-touch-callout: none;
   cursor: pointer;
+  height: 40px;
   position: absolute;
   right: 12px;
-  width: 40px;
-  height: 40px;
   user-select: none;
-  -webkit-touch-callout: none;
+  width: 40px;
 `;
 
 export const MenuOverlay = styled.ul`
-  box-sizing: content-box;
-  position: absolute;
-  width: 300px;
-  margin: -20px 0 0 0;
-  padding: 40px;
-  padding-top: 20px;
-  right: -100px;
-  background: #ededed;
-  list-style-type: none;
   -webkit-font-smoothing: antialiased;
+  background: #ededed;
+  box-sizing: content-box;
+  list-style-type: none;
+  margin: -20px 0 0 0;
+  padding-top: 20px;
+  padding: 40px;
+  position: absolute;
+  right: -100px;
   transform-origin: 0% 0%;
   transform: translate(100%, 0);
   transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  width: 300px;
   ${({ isMenuOpen }) =>
     isMenuOpen
       ? `transform: none;
@@ -54,14 +54,14 @@ export const MenuOverlay = styled.ul`
       : ''}
 
   @media (min-width: ${breakpoints.l}px) {
-    transform: none;
     background: none;
-    position: relative;
-    margin: 0;
+    margin: 0 0 0 20px;
     padding: 0;
-    width: 800px;
+    position: relative;
     right: auto;
     transform-origin: none;
+    transform: none;
+    width: 800px;
 
     & li {
       display: inline-block;
@@ -71,14 +71,12 @@ export const MenuOverlay = styled.ul`
 
 export const MenuLink = styled(Link)`
   color: black;
-  text-decoration: none;
   font-size: 2rem;
   font-weight: bold;
   padding: 0 12px;
+  text-decoration: none;
 
   @media (max-width: ${breakpoints.s}px) {
     font-size: 1.4rem;
   }
 `;
-
-export const Row = styled.div``;

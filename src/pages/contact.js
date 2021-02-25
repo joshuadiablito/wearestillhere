@@ -20,7 +20,11 @@ const ContactPage = () => (
       <a href="mailto:stories@wearestillhere.net">stories@wearestillhere.net</a>
       <br />
       via{' '}
-      <a href="https://www.facebook.com/wearestillherestories" target="_blank">
+      <a
+        href="https://www.facebook.com/wearestillherestories"
+        rel="noreferrer"
+        target="_blank"
+      >
         Facebook
       </a>
       <br />
@@ -28,6 +32,7 @@ const ContactPage = () => (
       <a
         href="https://www.instagram.com/wearestillherestories/"
         target="_blank"
+        rel="noreferrer"
       >
         Instagram
       </a>

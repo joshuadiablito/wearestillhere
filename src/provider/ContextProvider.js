@@ -11,8 +11,6 @@ const ContextProvider = ({ children }) => {
 
   const [store] = useState(initialStoreState);
 
-  console.log({ store });
-
   return (
     <Context.Provider
       value={{

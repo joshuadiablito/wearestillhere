@@ -44,6 +44,7 @@ const TeamPage = () => (
       <a
         href="https://research-information.bris.ac.uk/en/persons/adrian-g-flint"
         target="_blank"
+        rel="noreferrer"
       >
         on his homepage
       </a>
