@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react';
 
 import SEO from '~/components/seo';
-import StoryTiles from '~/components/StoryTiles';
 
 const TeamPage = () => (
   <Fragment>
@@ -74,7 +73,6 @@ const TeamPage = () => (
         on his homepage
       </a>
     </p>
-    <StoryTiles />
   </Fragment>
 );
 

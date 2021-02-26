@@ -19,9 +19,11 @@ export const StoryTile = styled.div`
 `;
 
 export const Title = styled.span`
+  display: block;
   font-weight: 300;
-  font-size: 1.2rem;
+  font-size: 0.8rem;
   text-align: center;
+  width: 100%;
 `;
 
 export const ShortDescription = styled.span`

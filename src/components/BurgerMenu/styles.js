@@ -6,7 +6,7 @@ export const BurgerMenuButton = styled.button`
   border: 0;
   background: none;
   position: absolute;
-  right: 20px;
+  right: 12px;
   top: 28px;
   outline: none;
   z-index: 3;

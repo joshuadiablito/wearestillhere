@@ -50,6 +50,11 @@ function SEO({ description, lang, meta, keywords, title }) {
                 name: `twitter:description`,
                 content: metaDescription,
               },
+              {
+                name: 'viewport',
+                content:
+                  'width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no,viewport-fit=cover',
+              },
             ]
               .concat(
                 keywords.length > 0

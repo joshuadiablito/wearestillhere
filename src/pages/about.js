@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 
 import SEO from '~/components/seo';
-import StoryTiles from '~/components/StoryTiles';
+
 
 const AboutPage = () => (
   <Fragment>
@@ -53,7 +53,6 @@ const AboutPage = () => (
       Festival for recognising our project&#x2019;s worth and providing both
       financial, moral, and logistical support.
     </p>
-    <StoryTiles />
   </Fragment>
 );
 

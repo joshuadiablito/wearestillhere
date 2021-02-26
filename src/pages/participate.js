@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react';
 
 import SEO from '~/components/seo';
-import StoryTiles from '~/components/StoryTiles';
 
 const ParticipatePage = () => (
   <Fragment>
@@ -20,7 +19,6 @@ const ParticipatePage = () => (
       beginning. Inclusivity is a journey and it’s something you can help
       navigate.
     </p>
-    <StoryTiles />
   </Fragment>
 );
 

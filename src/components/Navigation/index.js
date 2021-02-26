@@ -13,12 +13,22 @@ const Navigation = ({ logo, siteTitle }) => {
   const handleClick = React.useCallback(() => {
     setMenuOpen(!isMenuOpen);
   }, [isMenuOpen]);
+
   return (
     <Container>
       <Global
         styles={css`
           body {
             overflow-x: hidden;
+            position: relative;
+          }
+          a {
+            color: #000;
+            font-weight: bold;
+          }
+          a.active {
+            color: #fff;
+            font-weight: bolder;
           }
         `}
       />
@@ -28,16 +38,29 @@ const Navigation = ({ logo, siteTitle }) => {
       <BurgerMenu onClick={handleClick} isMenuOpen={isMenuOpen} />
       <MenuOverlay isMenuOpen={isMenuOpen}>
         <li>
-          <MenuLink to="/about">About</MenuLink>
+          <MenuLink to="/" activeClassName="active">
+            Home
+          </MenuLink>
         </li>
         <li>
-          <MenuLink to="/team">Team</MenuLink>
+          <MenuLink to="/about/" activeClassName="active">
+            About
+          </MenuLink>
         </li>
         <li>
-          <MenuLink to="/contact">Contact</MenuLink>
+          <MenuLink to="/team/" activeClassName="active">
+            Team
+          </MenuLink>
         </li>
         <li>
-          <MenuLink to="/participate">Participate</MenuLink>
+          <MenuLink to="/participate/" activeClassName="active">
+            Participate
+          </MenuLink>
+        </li>
+        <li>
+          <MenuLink to="/contact/" activeClassName="active">
+            Contact
+          </MenuLink>
         </li>
       </MenuOverlay>
     </Container>

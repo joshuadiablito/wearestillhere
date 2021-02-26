@@ -1,7 +1,7 @@
 const path = require(`path`);
 const stories = require('./src/provider/stories');
 
-exports.createPages = ({ graphql, actions }) => {
+exports.createPages = ({ actions }) => {
   const { createPage } = actions;
 
   stories.forEach(({ id, title, href, image, fullImage, shortDescription }) => {

@@ -14,12 +14,11 @@ import {
 import { StoryTitle, StoryDescription } from './styles';
 
 const StoryPage = ({ location }) => {
-  const { store } = useContext(StoreContext);
+  const {
+    store: { stories },
+  } = useContext(StoreContext);
   const { pathname } = location;
-  const { stories } = store;
-  const [story] = stories.filter(
-    ({ href }) => href === pathname.endsWith(href)
-  );
+  const [story] = stories.filter(({ href }) => pathname.includes(href));
 
   if (!story) {
     return null;
