@@ -37,18 +37,6 @@ export const MenuOverlay = styled.ul`
       `
       : ''}
 
-  @media screen and (max-width: ${breakpoints.s}px) {
-    transform: none;
-    opacity: 0;
-    transition: opacity 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
-    ${({ isMenuOpen }) =>
-      isMenuOpen
-        ? `
-      opacity: 1;
-      `
-        : ''}
-  }
-
   @media (min-width: ${breakpoints.l}px) {
     background: none;
     margin: 0 0 0 20px;
