@@ -31,9 +31,9 @@ const StoryTiles = () => {
   return (
     <Grid>
       {stories &&
-        stories.map(({ id, href, title, smallImage, shortDescription }) => {
+        stories.map(({ id, href, title, mainImage, shortDescription }) => {
           const [image] = edges.filter(
-            ({ node }) => node.fluid.originalName === smallImage
+            ({ node }) => node.fluid.originalName === mainImage
           );
 
           return (

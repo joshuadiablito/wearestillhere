@@ -5,7 +5,7 @@ import SEO from '~/components/seo';
 const ParticipatePage = () => (
   <Fragment>
     <SEO
-      title="Home"
+      title="Participate"
       keywords={['photography', 'exhibition', 'HIV', 'Bristol']}
     />
     <h1>Participate</h1>

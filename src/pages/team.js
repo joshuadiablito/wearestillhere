@@ -5,10 +5,10 @@ import SEO from '~/components/seo';
 const TeamPage = () => (
   <Fragment>
     <SEO
-      title="Home"
+      title="Team"
       keywords={['photography', 'exhibition', 'HIV', 'Bristol']}
     />
-    <h1>The Team</h1>
+    <h1>Team</h1>
     <p>
       What unites us as a team is our interest in storytelling and the
       construction and power of narratives.

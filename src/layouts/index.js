@@ -12,6 +12,9 @@ const Wrapper = styled.div`
   max-width: 960px;
   padding: 0px 1.0875rem 1.45rem;
 `;
+const Footer = styled.footer`
+  font-size: 0.8rem;
+`;
 const Layout = ({ children }) => {
   const { site } = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -31,7 +34,7 @@ const Layout = ({ children }) => {
         {children}
         <br />
         <br />
-        <footer>&copy; {new Date().getFullYear()}</footer>
+        <Footer>We Are Still Here &copy; {new Date().getFullYear()} </Footer>
       </Wrapper>
     </ContextProvider>
   );
