@@ -29,14 +29,17 @@
     "querystringify": "^2.2.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-h5-audio-player": "^3.6.1",
     "react-helmet": "^6.1.0",
+    "react-image-gallery": "^1.0.9",
     "set-value": "^3.0.2"
   },
   "keywords": [],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
-    "dev": "gatsby develop",
+    "build": "yarn copy-audio-files && gatsby build",
+    "dev": "yarn copy-audio-files && gatsby develop",
+    "copy-audio-files": "rm -rf public/static/audio && cp -R src/audio public/static/audio",
     "start": "npm run dev",
     "format": "prettier --write \"src/**/*.js\""
   },

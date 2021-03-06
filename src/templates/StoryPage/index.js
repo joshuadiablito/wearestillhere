@@ -1,11 +1,12 @@
 import React, { Fragment, useContext, useEffect } from 'react';
 import { navigate, useStaticQuery, graphql } from 'gatsby';
+import ImageGallery from 'react-image-gallery';
+import AudioPlayer from 'react-h5-audio-player';
 
 import SEO from '~/components/seo';
 
 import StoreContext from '../../context/StoreContext';
 import {
-  Img,
   Container,
   MainContent,
   TwoColumnGrid,
@@ -14,7 +15,12 @@ import {
 } from '../../utils/styles';
 import { StoryTitle, StoryDescription } from './styles';
 
-const getStoryImages = (mainImage, images) => {
+const StoryPage = ({ location }) => {
+  const {
+    store: { stories },
+  } = useContext(StoreContext);
+  const { pathname } = location;
+  const [story] = stories.filter(({ href }) => pathname.includes(href));
   const {
     allFile: { nodes },
   } = useStaticQuery(graphql`
@@ -41,34 +47,30 @@ const getStoryImages = (mainImage, images) => {
     }
   `);
 
-  const [image] = nodes.filter(({ childImageSharp, id }) => {
-    console.log({ id, childImageSharp });
-
-    return childImageSharp && childImageSharp.fluid.originalName === mainImage;
-  });
-
-  const filteredImages = nodes.filter(({ childImageSharp }) => {
-    console.log({ child: childImageSharp });
-    return (
-      childImageSharp && images.indexOf(childImageSharp.small.originalName) >= 0
-    );
-  });
-
-  return [image, filteredImages];
-};
-
-const StoryPage = ({ location }) => {
-  const {
-    store: { stories },
-  } = useContext(StoreContext);
-  const { pathname } = location;
-  const [story] = stories.filter(({ href }) => pathname.includes(href));
-  // console.log({ story, pathname, stories });
-
-  const [mainImage, additionalImages] = getStoryImages(
-    story.mainImage,
-    story.images
+  const [mainImage] = nodes.filter(
+    ({ childImageSharp, id }) =>
+      childImageSharp && childImageSharp.fluid.originalName === story.mainImage
   );
+  const additionalImages = nodes
+    .filter(
+      ({ childImageSharp }) =>
+        childImageSharp &&
+        story.images.indexOf(childImageSharp.small.originalName) >= 0
+    )
+    .map(({ childImageSharp }) => {
+      return {
+        original: childImageSharp.large.src,
+        thumbnail: childImageSharp.small.src,
+      };
+    });
+
+  const imageGalleryImages = [
+    {
+      original: mainImage.childImageSharp.large.src,
+      thumbnail: mainImage.childImageSharp.small.src,
+    },
+    ...additionalImages,
+  ];
 
   useEffect(() => {
     if (!story) {
@@ -76,33 +78,32 @@ const StoryPage = ({ location }) => {
     }
   }, [story]);
 
-  console.log({ mainImage, additionalImages });
-
   return (
     <Fragment>
       <SEO title={story.title} description={story.description} />
       <Container>
         <MainContent>
-          <Img
-            fluid={mainImage.childImageSharp.fluid}
-            key={story.id}
-            alt={`${story.title} - ${story.shortDescription}`}
+          <StoryTitle>{story.title}</StoryTitle>
+          <StoryDescription
+            dangerouslySetInnerHTML={{ __html: story.shortDescription }}
           />
+          <ImageGallery
+            items={imageGalleryImages}
+            lazyLoad
+            showPlayButton={false}
+            showBullets
+            showIndex
+          />
+          {story.audioFile && (
+            <AudioPlayer
+              src={`/static/audio/${story.audioFile}`}
+              timeFormat="mm:ss"
+            />
+          )}
         </MainContent>
         <TwoColumnGrid>
-          <GridLeft>
-            {additionalImages.map(({ childImageSharp, id }) => {
-              return (
-                <Img fixed={childImageSharp.small} key={id} alt={story.title} />
-              );
-            })}
-          </GridLeft>
-          <GridRight>
-            <StoryTitle>{story.title}</StoryTitle>
-            <StoryDescription
-              dangerouslySetInnerHTML={{ __html: story.shortDescription }}
-            />
-          </GridRight>
+          <GridLeft></GridLeft>
+          <GridRight></GridRight>
         </TwoColumnGrid>
       </Container>
     </Fragment>

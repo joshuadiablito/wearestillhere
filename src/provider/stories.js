@@ -14,6 +14,7 @@ const stories = [
       'Florence-privatepictures (7).jpg',
       'Florence-privatepictures (8).jpg',
     ],
+    audioFile: '2 Florence Obeda.mp3',
     shortDescription: "Florence's photos",
   },
   {
@@ -22,6 +23,7 @@ const stories = [
     href: 'stephen',
     mainImage: 'stephen.jpg',
     images: [],
+    audioFile: '',
     shortDescription: "Stephen's photos",
   },
   {
@@ -30,6 +32,7 @@ const stories = [
     href: 'jonathan',
     mainImage: 'jonathan.jpg',
     images: [],
+    audioFile: '',
     shortDescription: "Jonathan's photos",
   },
 ];

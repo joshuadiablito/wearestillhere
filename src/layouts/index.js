@@ -7,6 +7,8 @@ import ContextProvider from '~/provider/ContextProvider';
 import { GlobalStyle } from '~/utils/styles';
 import Navigation from '~/components/Navigation';
 
+import './styles.css';
+
 const Wrapper = styled.div`
   margin: 0 auto;
   max-width: 960px;
