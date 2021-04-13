@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 import styled from '@emotion/styled';
+import Image from 'gatsby-image';
 
 import ContextProvider from '~/provider/ContextProvider';
 import { GlobalStyle } from '~/utils/styles';
@@ -16,10 +17,29 @@ const Wrapper = styled.div`
 `;
 const Footer = styled.footer`
   font-size: 0.8rem;
+  margin-top: 80px;
 `;
 const Layout = ({ children }) => {
-  const { site } = useStaticQuery(graphql`
-    query SiteTitleQuery {
+  const {
+    site,
+    bop: { childImageSharp: bop },
+    biuob: { childImageSharp: biuob },
+  } = useStaticQuery(graphql`
+    query LayoutQuery {
+      bop: file(relativePath: { eq: "bristol-photo-festival.png" }) {
+        childImageSharp {
+          fixed(height: 80) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      biuob: file(relativePath: { eq: "brigstow-institute-uob.png" }) {
+        childImageSharp {
+          fixed(height: 80) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
       site {
         siteMetadata {
           title
@@ -34,9 +54,26 @@ const Layout = ({ children }) => {
       <Navigation siteTitle={site.siteMetadata.title} />
       <Wrapper>
         {children}
-        <br />
-        <br />
-        <Footer>We Are Still Here &copy; {new Date().getFullYear()} </Footer>
+        <Footer>
+          <p>We Are Still Here &copy;</p>
+          <a
+            href="http://www.bristolphotofestival.org/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <Image fixed={bop.fixed} alt="Bristol Photo Festival" />
+          </a>
+          <a
+            href="http://www.bristol.ac.uk/brigstow/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <Image
+              fixed={biuob.fixed}
+              alt="Brigsto Institute - University of Bristol"
+            />
+          </a>
+        </Footer>
       </Wrapper>
     </ContextProvider>
   );

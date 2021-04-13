@@ -19,7 +19,7 @@ const Navigation = ({ logo, siteTitle }) => {
     <Container>
       <Global
         styles={css`
-          body {
+          #___gatsby {
             overflow-x: hidden;
             position: relative;
           }

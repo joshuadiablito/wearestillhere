@@ -39,7 +39,7 @@
   "scripts": {
     "build": "yarn copy-audio-files && gatsby build",
     "dev": "yarn copy-audio-files && gatsby develop",
-    "copy-audio-files": "rm -rf public/static/audio && cp -R src/audio public/static/audio",
+    "copy-audio-files": "mkdir -p public/static/audio && rm -rf public/static/audio && cp -R src/audio public/static/audio",
     "start": "npm run dev",
     "format": "prettier --write \"src/**/*.js\""
   },
