@@ -1,7 +1,5 @@
 import styled from '@emotion/styled';
 
-import { breakpoints } from '../../utils/styles';
-
 export const BurgerMenuButton = styled.button`
   border: 0;
   background: none;
@@ -10,10 +8,6 @@ export const BurgerMenuButton = styled.button`
   top: 28px;
   outline: none;
   z-index: 3;
-
-  @media (min-width: ${breakpoints.l}px) {
-    display: none;
-  }
 `;
 export const BurgerMenuLine = styled.span`
   display: block;

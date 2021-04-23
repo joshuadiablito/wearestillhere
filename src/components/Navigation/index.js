@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 
 import Logo from '../../images/logo-small.svg';
 
-import { breakpoints } from '../../utils/styles';
 import BurgerMenu from '../BurgerMenu';
 
 import { Container, MenuLink, MenuOverlay } from './styles';
@@ -30,13 +29,6 @@ const Navigation = ({ logo, siteTitle }) => {
           a.active {
             color: #fff;
             font-weight: bolder;
-          }
-
-          @media (min-width: ${breakpoints.l}px) {
-            a.active {
-              color: #000;
-              text-decoration: underline;
-            }
           }
         `}
       />

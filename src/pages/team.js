@@ -1,9 +1,52 @@
 import React, { Fragment } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
+import styled from '@emotion/styled';
+import Image from 'gatsby-image';
 
 import SEO from '~/components/seo';
 
+const Left = styled.div`
+  float: left;
+  max-width: 400px;
+`;
+const Right = styled.div`
+  float: right;
+`;
 const TeamPage = () => {
+  const {
+    site,
+    team: { nodes: team },
+  } = useStaticQuery(graphql`
+    query TeamQuery {
+      team: allFile(filter: { relativeDirectory: { eq: "team" } }) {
+        nodes {
+          id
+          childImageSharp {
+            fluid(maxHeight: 200) {
+              ...GatsbyImageSharpFluid
+              originalName
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  console.log({ team });
+
+  const [martin] = team.filter(
+    ({ childImageSharp: { fluid } }) => fluid.originalName === 'martin.jpg'
+  );
+
+  const [mareike] = team.filter(
+    ({ childImageSharp: { fluid } }) => fluid.originalName === 'mareike.jpg'
+  );
+
+  const [adrian] = team.filter(
+    ({ childImageSharp: { fluid } }) => fluid.originalName === 'adrian.jpg'
+  );
+  console.log({ martin, mareike, adrian });
+
   return (
     <Fragment>
       <SEO
@@ -32,6 +75,10 @@ const TeamPage = () => {
         <a href="http://www.aspect-us.com/" rel="noreferrer" target="_blank">
           on her homepage
         </a>
+        <Image
+          fluid={mareike.childImageSharp.fluid}
+          style={{ maxHeight: '200px' }}
+        />
       </p>
       <p>
         <strong>Adrian Flint:</strong> is a Senior Lecturer in the School of
@@ -50,6 +97,10 @@ const TeamPage = () => {
         >
           on his homepage
         </a>
+        <Image
+          fluid={adrian.childImageSharp.fluid}
+          style={{ maxHeight: '200px' }}
+        />
       </p>
       <p>
         <strong>Martin Burns:</strong> is a writer, HIV/AIDS activist and
@@ -75,6 +126,10 @@ const TeamPage = () => {
         >
           on his homepage
         </a>
+        <Image
+          fluid={martin.childImageSharp.fluid}
+          style={{ maxHeight: '200px' }}
+        />
       </p>
     </Fragment>
   );

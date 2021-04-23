@@ -6,13 +6,7 @@ import AudioPlayer from 'react-h5-audio-player';
 import SEO from '~/components/seo';
 
 import StoreContext from '../../context/StoreContext';
-import {
-  Container,
-  MainContent,
-  TwoColumnGrid,
-  GridLeft,
-  GridRight,
-} from '../../utils/styles';
+import { Container, MainContent } from '../../utils/styles';
 import { StoryTitle, StoryDescription } from './styles';
 
 const StoryPage = ({ location }) => {
@@ -84,9 +78,6 @@ const StoryPage = ({ location }) => {
       <Container>
         <MainContent>
           <StoryTitle>{story.title}</StoryTitle>
-          <StoryDescription
-            dangerouslySetInnerHTML={{ __html: story.shortDescription }}
-          />
           <ImageGallery
             items={imageGalleryImages}
             lazyLoad
@@ -100,11 +91,10 @@ const StoryPage = ({ location }) => {
               timeFormat="mm:ss"
             />
           )}
+          <StoryDescription
+            dangerouslySetInnerHTML={{ __html: story.longStory }}
+          />
         </MainContent>
-        <TwoColumnGrid>
-          <GridLeft></GridLeft>
-          <GridRight></GridRight>
-        </TwoColumnGrid>
       </Container>
     </Fragment>
   );

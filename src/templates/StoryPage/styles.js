@@ -11,7 +11,9 @@ export const StoryTitle = styled.h1`
 `;
 
 export const StoryDescription = styled.div`
-  margin-top: 40px;
   font-family: 'Helvetica', 'Helvetica', sans-serif;
   font-weight: 300;
+  max-height: 400px;
+  overflow-y: auto;
+  margin-top: 12px;
 `;

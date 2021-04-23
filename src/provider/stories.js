@@ -1,3 +1,5 @@
+const florenceStoryLong = require('./florenceStoryLong');
+
 const stories = [
   {
     id: '1as4r2',
@@ -16,6 +18,7 @@ const stories = [
     ],
     audioFile: '2 Florence Obeda.mp3',
     shortDescription: "Florence's photos",
+    longStory: florenceStoryLong,
   },
   {
     id: 's89df9',
@@ -25,6 +28,7 @@ const stories = [
     images: [],
     audioFile: '',
     shortDescription: "Stephen's photos",
+    longStory: florenceStoryLong,
   },
   {
     id: '24mlnk',
@@ -34,6 +38,7 @@ const stories = [
     images: [],
     audioFile: '',
     shortDescription: "Jonathan's photos",
+    longStory: florenceStoryLong,
   },
 ];
 

@@ -20,7 +20,7 @@ export const MenuOverlay = styled.ul`
   box-sizing: content-box;
   list-style-type: none;
   margin: -24px 0 0 0;
-  padding-top: 20px;
+  padding-top: 20px;8
   padding: 40px;
   position: absolute;
   right: -100px;
@@ -36,21 +36,6 @@ export const MenuOverlay = styled.ul`
       transform: none;
       `
       : ''}
-
-  @media (min-width: ${breakpoints.l}px) {
-    background: none;
-    margin: 0 0 0 20px;
-    padding: 0;
-    position: relative;
-    right: auto;
-    transform-origin: none;
-    transform: none;
-    width: 800px;
-
-    & li {
-      display: inline-block;
-    }
-  }
 `;
 
 export const MenuLink = styled(Link)`

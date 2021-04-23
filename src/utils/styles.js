@@ -57,7 +57,6 @@ export const GridRight = styled.div`
 `;
 
 export const MainContent = styled.main`
-  margin-top: 80px;
   margin-bottom: 40px;
 
   @media (max-width: ${breakpoints.l}px) {

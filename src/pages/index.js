@@ -9,7 +9,9 @@ const IndexPage = () => (
       title="Home"
       keywords={['photography', 'exhibition', 'HIV', 'Bristol']}
     />
-    <p>Welcome to We Are Still Here Photography Exhibition.</p>
+    <StoryTiles />
+    <StoryTiles />
+    <StoryTiles />
     <StoryTiles />
   </Fragment>
 );

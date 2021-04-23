@@ -14,7 +14,6 @@ export const Grid = styled.div`
 
 export const StoryTile = styled.div`
   display: flex;
-  min-height: 100%;
   flex-direction: column;
 `;
 
