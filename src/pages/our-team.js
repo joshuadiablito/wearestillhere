@@ -31,7 +31,6 @@ const Caption = styled.span`
 `;
 const OurTeamPage = () => {
   const {
-    site,
     team: { nodes: team },
   } = useStaticQuery(graphql`
     query TeamQuery {
