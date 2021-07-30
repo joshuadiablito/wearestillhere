@@ -77,7 +77,6 @@ const StoryPage = ({ location }) => {
       <SEO title={story.title} description={story.description} />
       <Container>
         <MainContent>
-          <StoryTitle>{story.title}</StoryTitle>
           <ImageGallery
             items={imageGalleryImages}
             lazyLoad
@@ -91,6 +90,7 @@ const StoryPage = ({ location }) => {
               timeFormat="mm:ss"
             />
           )}
+          <StoryTitle>{story.title}</StoryTitle>
           <StoryDescription
             dangerouslySetInnerHTML={{ __html: story.longStory }}
           />

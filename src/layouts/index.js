@@ -7,6 +7,7 @@ import Image from 'gatsby-image';
 import ContextProvider from '~/provider/ContextProvider';
 import {
   breakpoints,
+  Block,
   GlobalStyle,
   TwoColumnGrid,
   GridLeft,
@@ -34,7 +35,7 @@ const links = {
     title: 'Instagram',
   },
   'youtube.png': {
-    href: 'https://www.youtube.com/wearestillherestories',
+    href: 'https://www.youtube.com/channel/UC3OMFFNjJTLsQPyvt58t_AA',
     title: 'Youtube',
   },
 };
@@ -53,7 +54,7 @@ const FloatRight = styled.div`
 
   @media (max-width: ${breakpoints.s}px) {
     float: none;
-    padding-top: 12px;
+    padding-top: 0;
   }
 `;
 const Layout = ({ children }) => {
@@ -99,6 +100,7 @@ const Layout = ({ children }) => {
       <Navigation siteTitle={site.siteMetadata.title} />
       <Wrapper>
         {children}
+        <Block />
         <Footer>
           <TwoColumnGrid>
             <GridLeft>

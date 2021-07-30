@@ -2,13 +2,13 @@ import React, { Fragment } from 'react';
 
 import SEO from '~/components/seo';
 
-const ParticipatePage = () => (
+const OurParticipantsPage = () => (
   <Fragment>
     <SEO
-      title="Participate"
+      title="Our Participants"
       keywords={['photography', 'exhibition', 'HIV', 'Bristol']}
     />
-    <h1>Participate</h1>
+    <h1>Our Participants</h1>
     <p>
       &lsquo;We Are Still Here&rsquo; is a project that cannot live without its
       participants. Therefore we want to invite you to share your narrative and
@@ -22,4 +22,4 @@ const ParticipatePage = () => (
   </Fragment>
 );
 
-export default ParticipatePage;
+export default OurParticipantsPage;

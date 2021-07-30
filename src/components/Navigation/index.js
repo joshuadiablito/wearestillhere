@@ -1,18 +1,47 @@
 import { Global, css } from '@emotion/react';
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import PropTypes from 'prop-types';
-
-import Logo from '../../images/logo-small.svg';
+import { useStaticQuery, graphql } from 'gatsby';
+import Image from 'gatsby-image';
 
 import BurgerMenu from '../BurgerMenu';
 
 import { Container, MenuLink, MenuOverlay } from './styles';
 
-const Navigation = ({ logo, siteTitle }) => {
+const Navigation = ({ siteTitle }) => {
   const [isMenuOpen, setMenuOpen] = useState(false);
-  const handleClick = React.useCallback(() => {
+  const handleClick = useCallback(() => {
     setMenuOpen(!isMenuOpen);
   }, [isMenuOpen]);
+  const closeNavigation = useCallback(() => {
+    setMenuOpen(false);
+  }, []);
+  const {
+    allFile: { nodes },
+  } = useStaticQuery(graphql`
+    query LogoQuery {
+      allFile(filter: { name: { eq: "logo" } }) {
+        nodes {
+          id
+          name
+          absolutePath
+          childImageSharp {
+            small: fixed(height: 68) {
+              ...GatsbyImageSharpFixed
+              originalName
+            }
+            large: fixed(height: 300) {
+              ...GatsbyImageSharpFixed
+              originalName
+            }
+          }
+        }
+      }
+    }
+  `);
+  const [logo] = nodes;
+
+  console.log({ nodes });
 
   return (
     <Container>
@@ -32,34 +61,68 @@ const Navigation = ({ logo, siteTitle }) => {
           }
         `}
       />
-      <a href="/" title="We Are Still Here">
-        <Logo />
+      <a href="/" title={siteTitle}>
+        <Image fixed={logo.childImageSharp.small} alt={siteTitle} />
       </a>
       <BurgerMenu onClick={handleClick} isMenuOpen={isMenuOpen} />
       <MenuOverlay isMenuOpen={isMenuOpen}>
         <li>
-          <MenuLink to="/" activeClassName="active">
-            Home
+          <MenuLink to="/" activeClassName="active" onClick={closeNavigation}>
+            Our Project
           </MenuLink>
         </li>
         <li>
-          <MenuLink to="/about/" activeClassName="active">
-            About
+          <MenuLink
+            to="/our-intention/"
+            activeClassName="active"
+            onClick={closeNavigation}
+          >
+            Our Intention
           </MenuLink>
         </li>
         <li>
-          <MenuLink to="/team/" activeClassName="active">
-            Team
+          <MenuLink
+            to="/our-team/"
+            activeClassName="active"
+            onClick={closeNavigation}
+          >
+            Our Team
           </MenuLink>
         </li>
         <li>
-          <MenuLink to="/participate/" activeClassName="active">
-            Participate
+          <MenuLink
+            to="/our-participants/"
+            activeClassName="active"
+            onClick={closeNavigation}
+          >
+            Our Participants
           </MenuLink>
         </li>
         <li>
-          <MenuLink to="/contact/" activeClassName="active">
-            Contact
+          <MenuLink
+            to="/our-exhibition/"
+            activeClassName="active"
+            onClick={closeNavigation}
+          >
+            Our Exhibition
+          </MenuLink>
+        </li>
+        <li>
+          <MenuLink
+            to="/our-resources/"
+            activeClassName="active"
+            onClick={closeNavigation}
+          >
+            Our Resources
+          </MenuLink>
+        </li>
+        <li>
+          <MenuLink
+            to="/our-details/"
+            activeClassName="active"
+            onClick={closeNavigation}
+          >
+            Our Details
           </MenuLink>
         </li>
       </MenuOverlay>

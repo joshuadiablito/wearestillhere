@@ -7,7 +7,7 @@ export const BurgerMenuButton = styled.button`
   right: 12px;
   top: 28px;
   outline: none;
-  z-index: 3;
+  z-index: 6;
 `;
 export const BurgerMenuLine = styled.span`
   display: block;

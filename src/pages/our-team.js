@@ -2,17 +2,34 @@ import React, { Fragment } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import styled from '@emotion/styled';
 import Image from 'gatsby-image';
-
+import { breakpoints } from '~/utils/styles';
 import SEO from '~/components/seo';
 
 const Left = styled.div`
   float: left;
-  max-width: 400px;
+  padding-right: 12px;
+
+  @media (max-width: ${breakpoints.s}px) {
+    float: none;
+    padding-right: 0;
+    width: 100%;
+  }
 `;
 const Right = styled.div`
   float: right;
+  padding-left: 12px;
+
+  @media (max-width: ${breakpoints.s}px) {
+    float: none;
+    padding-left: 0;
+    width: 100%;
+  }
 `;
-const TeamPage = () => {
+const Caption = styled.span`
+  font-size: 0.7rem;
+  display: block;
+`;
+const OurTeamPage = () => {
   const {
     site,
     team: { nodes: team },
@@ -22,8 +39,12 @@ const TeamPage = () => {
         nodes {
           id
           childImageSharp {
-            fluid(maxHeight: 200) {
-              ...GatsbyImageSharpFluid
+            width: fixed(width: 300) {
+              ...GatsbyImageSharpFixed
+              originalName
+            }
+            height: fixed(height: 300) {
+              ...GatsbyImageSharpFixed
               originalName
             }
           }
@@ -31,33 +52,33 @@ const TeamPage = () => {
       }
     }
   `);
-
-  console.log({ team });
-
   const [martin] = team.filter(
-    ({ childImageSharp: { fluid } }) => fluid.originalName === 'martin.jpg'
+    ({ childImageSharp: { width } }) => width.originalName === 'martin.jpg'
   );
 
   const [mareike] = team.filter(
-    ({ childImageSharp: { fluid } }) => fluid.originalName === 'mareike.jpg'
+    ({ childImageSharp: { width } }) => width.originalName === 'mareike.jpg'
   );
 
   const [adrian] = team.filter(
-    ({ childImageSharp: { fluid } }) => fluid.originalName === 'adrian.jpg'
+    ({ childImageSharp: { width } }) => width.originalName === 'adrian.jpg'
   );
-  console.log({ martin, mareike, adrian });
 
   return (
     <Fragment>
       <SEO
-        title="Team"
+        title="Our Team"
         keywords={['photography', 'exhibition', 'HIV', 'Bristol']}
       />
-      <h1>Team</h1>
+      <h1>Our Team</h1>
       <p>
         What unites us as a team is our interest in storytelling and the
         construction and power of narratives.
       </p>
+      <Right>
+        <Image fixed={mareike.childImageSharp.width} alt="Mareike Günsche" />
+        <Caption>Mareike Günsche</Caption>
+      </Right>
       <p>
         <strong>Mareike Günsche:</strong> is a London-based photographer and
         educator focusing on human rights, gender issues and social change, with
@@ -75,11 +96,11 @@ const TeamPage = () => {
         <a href="http://www.aspect-us.com/" rel="noreferrer" target="_blank">
           on her homepage
         </a>
-        <Image
-          fluid={mareike.childImageSharp.fluid}
-          style={{ maxHeight: '200px' }}
-        />
       </p>
+      <Left>
+        <Image fixed={adrian.childImageSharp.height} alt="Adrian Flint" />
+        <Caption>Adrian Flint</Caption>
+      </Left>
       <p>
         <strong>Adrian Flint:</strong> is a Senior Lecturer in the School of
         Sociology, Politics and International Relations at the University of
@@ -97,11 +118,11 @@ const TeamPage = () => {
         >
           on his homepage
         </a>
-        <Image
-          fluid={adrian.childImageSharp.fluid}
-          style={{ maxHeight: '200px' }}
-        />
       </p>
+      <Right>
+        <Image fixed={martin.childImageSharp.width} alt="Martin Burns" />
+        <Caption>Martin Burns</Caption>
+      </Right>
       <p>
         <strong>Martin Burns:</strong> is a writer, HIV/AIDS activist and
         equality advocate who was born in Shakespeare’s County and continued his
@@ -126,13 +147,10 @@ const TeamPage = () => {
         >
           on his homepage
         </a>
-        <Image
-          fluid={martin.childImageSharp.fluid}
-          style={{ maxHeight: '200px' }}
-        />
       </p>
+      <div style={{ clear: 'both' }} />
     </Fragment>
   );
 };
 
-export default TeamPage;
+export default OurTeamPage;

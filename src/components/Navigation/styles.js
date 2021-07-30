@@ -7,10 +7,8 @@ export const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-
   padding: 1.45rem;
-
-  margin: 0 auto 1.45rem auto;
+  margin: 0 auto;
   max-width: 960px;
 `;
 
@@ -20,15 +18,14 @@ export const MenuOverlay = styled.ul`
   box-sizing: content-box;
   list-style-type: none;
   margin: -24px 0 0 0;
-  padding-top: 20px;8
-  padding: 40px;
+  padding: 20px;
   position: absolute;
   right: -100px;
   transform-origin: 0% 0%;
   transform: translate(100%, 0);
   transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
   width: 300px;
-  z-index: 2;
+  z-index: 5;
   ${({ isMenuOpen }) =>
     isMenuOpen
       ? `

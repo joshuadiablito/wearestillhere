@@ -43,8 +43,8 @@ export const TwoColumnGrid = styled.div`
   grid-template-rows: 1auto;
   grid-template-areas: 'left . right';
 
-  @media (max-width: ${breakpoints.l}px) {
-    display: block;
+  @media (max-width: ${breakpoints.s}px) {
+    display: block; 
   }
 `;
 
@@ -56,11 +56,16 @@ export const GridRight = styled.div`
   grid-area: right;
 `;
 
+export const Block = styled.div`
+  display: block;
+  height: 40px;
+  width: 100%;
+  content: '';
+`;
 export const MainContent = styled.main`
   margin-bottom: 40px;
 
   @media (max-width: ${breakpoints.l}px) {
-    margin-top: 40px;
     margin-bottom: 20px;
   }
 `;

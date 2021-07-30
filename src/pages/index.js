@@ -6,7 +6,7 @@ import StoryTiles from '~/components/StoryTiles';
 const IndexPage = () => (
   <Fragment>
     <SEO
-      title="Home"
+      title="Our Project"
       keywords={['photography', 'exhibition', 'HIV', 'Bristol']}
     />
     <StoryTiles />

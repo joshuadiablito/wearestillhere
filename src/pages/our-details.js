@@ -2,13 +2,13 @@ import React, { Fragment } from 'react';
 
 import SEO from '~/components/seo';
 
-const ContactPage = () => (
+const OurDetailsPage = () => (
   <Fragment>
     <SEO
-      title="Contact"
+      title="Our Details"
       keywords={['photography', 'exhibition', 'HIV', 'Bristol']}
     />
-    <h1>Contact</h1>
+    <h1>Our Details</h1>
     <p>
       Please get in touch with us if you have any questions. Also please reach
       out to us if you want to participate.{' '}
@@ -44,4 +44,4 @@ const ContactPage = () => (
   </Fragment>
 );
 
-export default ContactPage;
+export default OurDetailsPage;
