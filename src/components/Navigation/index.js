@@ -41,8 +41,6 @@ const Navigation = ({ siteTitle }) => {
   `);
   const [logo] = nodes;
 
-  console.log({ nodes });
-
   return (
     <Container>
       <Global

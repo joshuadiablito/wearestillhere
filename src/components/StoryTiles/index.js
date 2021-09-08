@@ -28,10 +28,14 @@ const StoryTiles = () => {
     }
   `);
 
+  edges.forEach(({ node }) => {
+    console.log(node.fluid);
+  });
   return (
     <Grid>
       {stories &&
         stories.map(({ id, href, title, mainImage, shortDescription }) => {
+          console.log({ mainImage });
           const [image] = edges.filter(
             ({ node }) => node.fluid.originalName === mainImage
           );
@@ -42,7 +46,14 @@ const StoryTiles = () => {
                 to={`/story/${href}`}
                 style={{ textDecoration: 'none', color: 'black' }}
               >
-                <Img fluid={image.node.fluid} alt={title} />
+                <Img
+                  fluid={image.node.fluid}
+                  alt={title}
+                  imgStyle={{
+                    objectFit: 'cover',
+                    objectPosition: '50% 50%',
+                  }}
+                />
                 <Title>{title}</Title>
               </Link>
             </StoryTile>

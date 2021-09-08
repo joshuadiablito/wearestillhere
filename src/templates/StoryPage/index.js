@@ -7,14 +7,16 @@ import SEO from '~/components/seo';
 
 import StoreContext from '../../context/StoreContext';
 import { Container, MainContent } from '../../utils/styles';
-import { StoryTitle, StoryDescription } from './styles';
+import { Breadcrumbs, StoryTitle, StoryDescription } from './styles';
 
 const StoryPage = ({ location }) => {
   const {
     store: { stories },
   } = useContext(StoreContext);
   const { pathname } = location;
-  const [story] = stories.filter(({ href }) => pathname.includes(href));
+  const [story] = stories.filter(({ href }) =>
+    pathname.split('/').join('').endsWith(href)
+  );
   const {
     allFile: { nodes },
   } = useStaticQuery(graphql`
@@ -40,17 +42,17 @@ const StoryPage = ({ location }) => {
       }
     }
   `);
-
   const [mainImage] = nodes.filter(
     ({ childImageSharp, id }) =>
       childImageSharp && childImageSharp.fluid.originalName === story.mainImage
   );
   const additionalImages = nodes
-    .filter(
-      ({ childImageSharp }) =>
+    .filter(({ childImageSharp }) => {
+      return (
         childImageSharp &&
         story.images.indexOf(childImageSharp.small.originalName) >= 0
-    )
+      );
+    })
     .map(({ childImageSharp }) => {
       return {
         original: childImageSharp.large.src,
@@ -77,6 +79,10 @@ const StoryPage = ({ location }) => {
       <SEO title={story.title} description={story.description} />
       <Container>
         <MainContent>
+          <Breadcrumbs>
+            <a href="/">Our Project</a> &raquo; <span>{story.title}</span>
+          </Breadcrumbs>
+          <StoryTitle>{story.title}</StoryTitle>
           <ImageGallery
             items={imageGalleryImages}
             lazyLoad
@@ -90,7 +96,6 @@ const StoryPage = ({ location }) => {
               timeFormat="mm:ss"
             />
           )}
-          <StoryTitle>{story.title}</StoryTitle>
           <StoryDescription
             dangerouslySetInnerHTML={{ __html: story.longStory }}
           />

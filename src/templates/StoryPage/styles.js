@@ -15,3 +15,13 @@ export const StoryDescription = styled.div`
   max-height: 400px;
   overflow-y: auto;
 `;
+
+export const Breadcrumbs = styled.aside`
+  font-size: 0.9rem;
+  a {
+    text-decoration: none;
+    &:hover {
+      border-bottom: 1px solid black;
+    }
+  }
+`;

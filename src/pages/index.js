@@ -10,9 +10,6 @@ const IndexPage = () => (
       keywords={['photography', 'exhibition', 'HIV', 'Bristol']}
     />
     <StoryTiles />
-    <StoryTiles />
-    <StoryTiles />
-    <StoryTiles />
   </Fragment>
 );
 

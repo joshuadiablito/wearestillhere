@@ -16,14 +16,16 @@ export const Grid = styled.div`
 export const StoryTile = styled.div`
   display: flex;
   flex-direction: column;
+  padding-bottom: 24px; ;
 `;
 
 export const Title = styled.span`
   display: block;
   font-weight: 300;
-  font-size: 0.8rem;
+  font-size: 1rem;
   text-align: center;
   width: 100%;
+  padding-top: 12px;
 `;
 
 export const ShortDescription = styled.span`

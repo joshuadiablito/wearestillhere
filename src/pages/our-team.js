@@ -52,7 +52,7 @@ const OurTeamPage = () => {
     }
   `);
   const [martin] = team.filter(
-    ({ childImageSharp: { width } }) => width.originalName === 'martin.jpg'
+    ({ childImageSharp: { width } }) => width.originalName === 'martin-team.jpg'
   );
 
   const [mareike] = team.filter(

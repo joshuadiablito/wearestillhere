@@ -18,6 +18,10 @@ import Navigation from '~/components/Navigation';
 import './styles.css';
 
 const links = {
+  'aspectus.jpg': {
+    href: 'https://aspect-us.com/',
+    title: 'Aspectus',
+  },
   'bristol-photo-festival.png': {
     href: 'http://www.bristolphotofestival.org/',
     title: 'Bristol Photo Festival',
@@ -25,6 +29,10 @@ const links = {
   'brigstow-institute-uob.png': {
     href: 'http://www.bristol.ac.uk/brigstow/',
     title: 'Brigstow Institute - University of Bristol',
+  },
+  'scioltio.png': {
+    href: '',
+    title: 'Scioltio Audio & Visual',
   },
   'facebook.png': {
     href: 'https://www.facebook.com/wearestillherestories',
@@ -93,7 +101,7 @@ const Layout = ({ children }) => {
       }
     }
   `);
-
+  console.log({ title: site.siteMetadata.title });
   return (
     <ContextProvider>
       <GlobalStyle />
@@ -105,18 +113,29 @@ const Layout = ({ children }) => {
           <TwoColumnGrid>
             <GridLeft>
               {sponsors.map(({ childImageSharp: { fixed } }) => {
-                const link = links[fixed.originalName];
+                const { href, title } = links[fixed.originalName];
+
+                if (href) {
+                  return (
+                    <a
+                      href={href}
+                      key={fixed.originalName}
+                      target="_blank"
+                      rel="noreferrer"
+                      style={{ paddingBottom: '12px', paddingRight: '12px' }}
+                    >
+                      <Image fixed={fixed} alt={title} />
+                    </a>
+                  );
+                }
 
                 return (
-                  <a
-                    href={link.href}
+                  <div
                     key={fixed.originalName}
-                    target="_blank"
-                    rel="noreferrer"
-                    style={{ paddingBottom: '12px' }}
+                    style={{ paddingBottom: '12px', paddingRight: '12px' }}
                   >
-                    <Image fixed={fixed} alt={link.title} />
-                  </a>
+                    <Image fixed={fixed} alt={title} />
+                  </div>
                 );
               })}
             </GridLeft>
