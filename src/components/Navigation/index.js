@@ -6,7 +6,7 @@ import Image from 'gatsby-image';
 
 import BurgerMenu from '../BurgerMenu';
 
-import { Container, MenuLink, MenuOverlay } from './styles';
+import { Container, MenuLink, MenuOverlay, MenuA } from './styles';
 
 const Navigation = ({ siteTitle }) => {
   const [isMenuOpen, setMenuOpen] = useState(false);
@@ -97,13 +97,14 @@ const Navigation = ({ siteTitle }) => {
           </MenuLink>
         </li>
         <li>
-          <MenuLink
-            to="/our-exhibition/"
+          <MenuA
+            href="http://www.bristolphotofestival.org/we-are-still-here/"
             activeClassName="active"
             onClick={closeNavigation}
+            target="_blank"
           >
             Our Exhibition
-          </MenuLink>
+          </MenuA>
         </li>
         <li>
           <MenuLink

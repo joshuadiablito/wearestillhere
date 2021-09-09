@@ -33,9 +33,27 @@ export const MenuOverlay = styled.ul`
       transform: none;
       `
       : ''}
+  li {
+    padding-bottom: 12px;
+  }
+  li:last-child {
+    padding-bottom: 0;
+  }
 `;
 
 export const MenuLink = styled(Link)`
+  color: black;
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 0 12px;
+  text-decoration: none;
+
+  @media (max-width: ${breakpoints.s}px) {
+    font-size: 1.4rem;
+  }
+`;
+
+export const MenuA = styled.a`
   color: black;
   font-size: 2rem;
   font-weight: bold;
