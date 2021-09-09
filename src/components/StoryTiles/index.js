@@ -28,14 +28,10 @@ const StoryTiles = () => {
     }
   `);
 
-  edges.forEach(({ node }) => {
-    console.log(node.fluid);
-  });
   return (
     <Grid>
       {stories &&
         stories.map(({ id, href, title, mainImage, shortDescription }) => {
-          console.log({ mainImage });
           const [image] = edges.filter(
             ({ node }) => node.fluid.originalName === mainImage
           );

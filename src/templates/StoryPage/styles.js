@@ -24,4 +24,5 @@ export const Breadcrumbs = styled.aside`
       border-bottom: 1px solid black;
     }
   }
+  padding-bottom: 12px;
 `;

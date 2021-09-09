@@ -38,12 +38,15 @@
   "license": "MIT",
   "scripts": {
     "build": "yarn copy-audio-files && gatsby build",
-    "dev": "yarn copy-audio-files && gatsby develop",
+    "dev": "gatsby develop",
     "copy-audio-files": "mkdir -p public/static/audio && rm -rf public/static/audio && cp -R src/audio public/static/audio",
     "start": "npm run dev",
+    "lint": "eslint src/**/*.js",
     "format": "prettier --write \"src/**/*.js\""
   },
   "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-plugin-react": "^7.25.1",
     "prettier": "^2.2.1"
   }
 }

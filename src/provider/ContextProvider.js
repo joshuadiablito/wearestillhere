@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
 import Context from '~/context/StoreContext';
 
@@ -21,4 +22,9 @@ const ContextProvider = ({ children }) => {
     </Context.Provider>
   );
 };
+
+ContextProvider.propTypes = {
+  children: PropTypes.node,
+};
+
 export default ContextProvider;

@@ -101,7 +101,10 @@ const Layout = ({ children }) => {
       }
     }
   `);
-  console.log({ title: site.siteMetadata.title });
+
+  const [scioltio, bristol, brigstow, aspectus] = sponsors;
+  const newSponsors = [bristol, brigstow, aspectus, scioltio];
+
   return (
     <ContextProvider>
       <GlobalStyle />
@@ -112,7 +115,7 @@ const Layout = ({ children }) => {
         <Footer>
           <TwoColumnGrid>
             <GridLeft>
-              {sponsors.map(({ childImageSharp: { fixed } }) => {
+              {newSponsors.map(({ childImageSharp: { fixed } }) => {
                 const { href, title } = links[fixed.originalName];
 
                 if (href) {
