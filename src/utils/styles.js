@@ -44,7 +44,7 @@ export const TwoColumnGrid = styled.div`
   grid-template-areas: 'left . right';
 
   @media (max-width: ${breakpoints.s}px) {
-    display: block; 
+    display: block;
   }
 `;
 

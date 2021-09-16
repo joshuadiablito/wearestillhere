@@ -1,10 +1,25 @@
 /* eslint-disable no-undef */
+const alanTranscript = require('./transcripts/alan');
 const anitaTranscript = require('./transcripts/anita');
+const ashleyTranscript = require('./transcripts/ashley');
 const beckyTranscript = require('./transcripts/becky');
+const emilyTranscript = require('./transcripts/emily');
 const florenceTranscript = require('./transcripts/florence');
 const harunTranscript = require('./transcripts/harun');
+const jamesTranscript = require('./transcripts/james');
+const jideTranscript = require('./transcripts/jide');
+const johnTranscript = require('./transcripts/john');
 const jonathanTranscript = require('./transcripts/jonathan');
+const joseTranscript = require('./transcripts/jose');
+const joshTranscript = require('./transcripts/josh');
+const joshuaTranscript = require('./transcripts/joshua');
+const martinTranscript = require('./transcripts/martin');
+const michalTranscript = require('./transcripts/michal');
+const philipTranscript = require('./transcripts/philip');
+const rahimTranscript = require('./transcripts/rahim');
 const stephenTranscript = require('./transcripts/stephen');
+const timTranscript = require('./transcripts/tim');
+
 /* eslint-enable no-undef */
 
 const stories = [

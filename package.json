@@ -24,15 +24,12 @@
     "gatsby-source-filesystem": "^2.10.0",
     "gatsby-transformer-sharp": "^2.11.0",
     "js-yaml": "^4.0.0",
-    "lodash": "^4.17.20",
     "prop-types": "^15.7.2",
-    "querystringify": "^2.2.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-h5-audio-player": "^3.6.1",
     "react-helmet": "^6.1.0",
-    "react-image-gallery": "^1.0.9",
-    "set-value": "^3.0.2"
+    "react-image-gallery": "^1.0.9"
   },
   "keywords": [],
   "license": "MIT",
