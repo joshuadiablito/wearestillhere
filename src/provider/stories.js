@@ -186,7 +186,7 @@ const stories = [
   },
   // {
   //   id: 'opipo123',
-  //   title: 'Jose',
+  //   title: 'José',
   //   href: 'jose',
   //   mainImage: 'jose.jpg',
   //   images: [
