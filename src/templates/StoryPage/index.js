@@ -82,7 +82,6 @@ const StoryPage = ({ location }) => {
           <Breadcrumbs>
             <a href="/">Our Project</a> &raquo; <span>{story.title}</span>
           </Breadcrumbs>
-          <StoryTitle>{story.title}</StoryTitle>
           <ImageGallery
             items={imageGalleryImages}
             lazyLoad
@@ -91,11 +90,9 @@ const StoryPage = ({ location }) => {
             showIndex
           />
           {story.audioFile && (
-            <AudioPlayer
-              src={`/static/audio/${story.audioFile}`}
-              timeFormat="mm:ss"
-            />
+            <AudioPlayer src={story.audioFile} timeFormat="mm:ss" />
           )}
+          <StoryTitle>{story.title}'s story</StoryTitle>
           <StoryDescription
             dangerouslySetInnerHTML={{ __html: story.longStory }}
           />

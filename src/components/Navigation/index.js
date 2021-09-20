@@ -1,6 +1,5 @@
 import { Global, css } from '@emotion/react';
 import React, { useCallback, useState } from 'react';
-import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 import Image from 'gatsby-image';
 
@@ -8,7 +7,7 @@ import BurgerMenu from '../BurgerMenu';
 
 import { Container, MenuLink, MenuOverlay, MenuA } from './styles';
 
-const Navigation = ({ siteTitle }) => {
+const Navigation = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const handleClick = useCallback(() => {
     setMenuOpen(!isMenuOpen);
@@ -59,8 +58,11 @@ const Navigation = ({ siteTitle }) => {
           }
         `}
       />
-      <a href="/" title={siteTitle}>
-        <Image fixed={logo.childImageSharp.small} alt={siteTitle} />
+      <a
+        href="/"
+        title="We Are Still Here - Photography Exhibition in Bristol, UK"
+      >
+        <Image fixed={logo.childImageSharp.small} />
       </a>
       <BurgerMenu onClick={handleClick} isMenuOpen={isMenuOpen} />
       <MenuOverlay isMenuOpen={isMenuOpen}>
@@ -106,7 +108,7 @@ const Navigation = ({ siteTitle }) => {
             Our Exhibition
           </MenuA>
         </li>
-        <li>
+        {/*<li>
           <MenuLink
             to="/our-resources/"
             activeClassName="active"
@@ -114,7 +116,7 @@ const Navigation = ({ siteTitle }) => {
           >
             Our Resources
           </MenuLink>
-        </li>
+        </li>*/}
         <li>
           <MenuLink
             to="/our-details/"
@@ -127,14 +129,6 @@ const Navigation = ({ siteTitle }) => {
       </MenuOverlay>
     </Container>
   );
-};
-
-Navigation.propTypes = {
-  siteTitle: PropTypes.string,
-};
-
-Navigation.defaultProps = {
-  siteTitle: ``,
 };
 
 export default Navigation;

@@ -1,24 +1,24 @@
 /* eslint-disable no-undef */
-const alanTranscript = require('./transcripts/alan');
+// const alanTranscript = require('./transcripts/alan');
 const anitaTranscript = require('./transcripts/anita');
-const ashleyTranscript = require('./transcripts/ashley');
+// const ashleyTranscript = require('./transcripts/ashley');
 const beckyTranscript = require('./transcripts/becky');
 const emilyTranscript = require('./transcripts/emily');
 const florenceTranscript = require('./transcripts/florence');
-const harunTranscript = require('./transcripts/harun');
-const jamesTranscript = require('./transcripts/james');
+// const harunTranscript = require('./transcripts/harun');
+// const jamesTranscript = require('./transcripts/james');
 const jideTranscript = require('./transcripts/jide');
-const johnTranscript = require('./transcripts/john');
+// const johnTranscript = require('./transcripts/john');
 const jonathanTranscript = require('./transcripts/jonathan');
-const joseTranscript = require('./transcripts/jose');
-const joshTranscript = require('./transcripts/josh');
+// const joseTranscript = require('./transcripts/jose');
+// const joshTranscript = require('./transcripts/josh');
 const joshuaTranscript = require('./transcripts/joshua');
 const martinTranscript = require('./transcripts/martin');
-const michalTranscript = require('./transcripts/michal');
-const philipTranscript = require('./transcripts/philip');
-const rahimTranscript = require('./transcripts/rahim');
+// const michalTranscript = require('./transcripts/michal');
+// const philipTranscript = require('./transcripts/philip');
+// const rahimTranscript = require('./transcripts/rahim');
 const stephenTranscript = require('./transcripts/stephen');
-const timTranscript = require('./transcripts/tim');
+// const timTranscript = require('./transcripts/tim');
 
 /* eslint-enable no-undef */
 
@@ -35,7 +35,7 @@ const stories = [
   //     'photo-20.jpg',
   //     'photo-32.jpg',
   //   ],
-  //   audioFile: '',
+  //   audioFile: '/static/audio/',
   //   shortDescription: "Alan's photos",
   //   longStory: '',
   // },
@@ -51,7 +51,7 @@ const stories = [
   //     'photo-29.jpg',
   //     'photo-30.jpg',
   //   ],
-  //   audioFile: '',
+  //   audioFile: '/static/audio/',
   //   shortDescription: "Andy's photos",
   //   longStory: '',
   // },
@@ -67,7 +67,7 @@ const stories = [
       'photo-51.jpg',
       'photo-52.jpg',
     ],
-    audioFile: 'anita.mp3',
+    audioFile: '/static/audio/anita.mp3',
     shortDescription: "Anita's photos",
     longStory: anitaTranscript,
   },
@@ -77,13 +77,14 @@ const stories = [
   //   href: 'ashley',
   //   mainImage: 'ashley.jpg',
   //   images: [
+  //     'photo-999.jpg',
   //     'photo-91.jpg',
   //     'photo-92.jpg',
   //     'photo-93.jpg',
   //     'photo-94.jpg',
   //     'photo-95.jpg',
   //   ],
-  //   audioFile: '',
+  //   audioFile: '/static/audio/',
   //   shortDescription: "Ashley's photos",
   //   longStory: '',
   // },
@@ -99,26 +100,26 @@ const stories = [
       'photo-85.jpg',
       'photo-106.jpg',
     ],
-    audioFile: 'becky.mp3',
+    audioFile: '/static/audio/becky.mp3',
     shortDescription: "Becky's photos",
     longStory: beckyTranscript,
   },
-  // {
-  //   id: 'iou234',
-  //   title: 'Emily',
-  //   href: 'emily',
-  //   mainImage: 'emily.jpg',
-  //   images: [
-  //     'photo-107.jpg',
-  //     'photo-108.jpg',
-  //     'photo-109.jpg',
-  //     'photo-110.jpg',
-  //     'photo-111.jpg',
-  //   ],
-  //   audioFile: '',
-  //   shortDescription: "Emily's photos",
-  //   longStory: '',
-  // },
+  {
+    id: 'iou234',
+    title: 'Emily',
+    href: 'emily',
+    mainImage: 'emily.jpg',
+    images: [
+      'photo-107.jpg',
+      'photo-108.jpg',
+      'photo-109.jpg',
+      'photo-110.jpg',
+      'photo-111.jpg',
+    ],
+    audioFile: '/static/audio/emily.mp3',
+    shortDescription: "Emily's photos",
+    longStory: emilyTranscript,
+  },
   {
     id: '1as4r2',
     title: 'Florence',
@@ -131,42 +132,36 @@ const stories = [
       'photo-18.jpg',
       'photo-112.jpg',
     ],
-    audioFile: 'florence.mp3',
+    audioFile: '/static/audio/florence.mp3',
     shortDescription: "Florence's photos",
     longStory: florenceTranscript,
   },
-  {
-    id: '121sdf',
-    title: 'Harun',
-    href: 'harun',
-    mainImage: 'harun.jpg',
-    images: [
-      'photo-42.jpg',
-      'photo-43.jpg',
-      'photo-44.jpg',
-      'photo-45.jpg',
-      'photo-57.jpg',
-    ],
-    audioFile: '',
-    shortDescription: "Harun's photos",
-    longStory: harunTranscript,
-  },
   // {
-  //   id: 'sdfpol1',
-  //   title: 'Jide',
-  //   href: 'jide',
-  //   mainImage: 'jide.jpg',
-  //   images: [
-  //     'photo-6.jpg',
-  //     'photo-19.jpg',
-  //     'photo-21.jpg',
-  //     'photo-22.jpg',
-  //     'photo-23.jpg',
-  //   ],
-  //   audioFile: '',
-  //   shortDescription: "Jide's photos",
-  //   longStory: '',
+  //   id: '121sdf',
+  //   title: 'Harun',
+  //   href: 'harun',
+  //   mainImage: 'harun.jpg',
+  //   images: ['photo-42.jpg', 'photo-44.jpg', 'photo-45.jpg', 'photo-57.jpg'],
+  //   audioFile: '/static/audio/',
+  //   shortDescription: "Harun's photos",
+  //   longStory: harunTranscript,
   // },
+  {
+    id: 'sdfpol1',
+    title: 'Jide',
+    href: 'jide',
+    mainImage: 'jide.jpg',
+    images: [
+      'photo-6.jpg',
+      'photo-19.jpg',
+      'photo-21.jpg',
+      'photo-22.jpg',
+      'photo-23.jpg',
+    ],
+    audioFile: '/static/audio/jide.mp3',
+    shortDescription: "Jide's photos",
+    longStory: jideTranscript,
+  },
   // {
   //   id: 'lnl23jdf',
   //   title: 'John',
@@ -179,7 +174,7 @@ const stories = [
   //     'photo-40.jpg',
   //     'photo-96.jpg',
   //   ],
-  //   audioFile: '',
+  //   audioFile: '/static/audio/',
   //   shortDescription: "John's photos",
   //   longStory: '',
   // },
@@ -195,7 +190,7 @@ const stories = [
       'photo-17.jpg',
       'photo-98.jpg',
     ],
-    audioFile: 'jonathan.mp3',
+    audioFile: '/static/audio/jonathan.mp3',
     shortDescription: "Jonathan's photos",
     longStory: jonathanTranscript,
   },
@@ -211,7 +206,7 @@ const stories = [
   //     'photo-75.jpg',
   //     'photo-77.jpg',
   //   ],
-  //   audioFile: '',
+  //   audioFile: '/static/audio/',
   //   shortDescription: "Jose's photos",
   //   longStory: '',
   // },
@@ -227,42 +222,42 @@ const stories = [
   //     'photo-64.jpg',
   //     'photo-68.jpg',
   //   ],
-  //   audioFile: '',
+  //   audioFile: '/static/audio/',
   //   shortDescription: "Josh's photos",
   //   longStory: '',
   // },
-  // {
-  //   id: 'joshdsasdfa',
-  //   title: 'Joshua',
-  //   href: 'joshua',
-  //   mainImage: 'joshua.jpg',
-  //   images: [
-  //     'photo-27.jpg',
-  //     'photo-33.jpg',
-  //     'photo-54.jpg',
-  //     'photo-81.jpg',
-  //     'photo-105.jpg',
-  //   ],
-  //   audioFile: '',
-  //   shortDescription: "Joshua's photos",
-  //   longStory: '',
-  // },
-  // {
-  //   id: 'msdfrew',
-  //   title: 'Martin',
-  //   href: 'martin',
-  //   mainImage: 'martin.jpg',
-  //   images: [
-  //     'photo-100.jpg',
-  //     'photo-101.jpg',
-  //     'photo-102.jpg',
-  //     'photo-103.jpg',
-  //     'photo-104.jpg',
-  //   ],
-  //   audioFile: '',
-  //   shortDescription: "Martin's photos",
-  //   longStory: '',
-  // },
+  {
+    id: 'joshdsasdfa',
+    title: 'Joshua',
+    href: 'joshua',
+    mainImage: 'joshua.jpg',
+    images: [
+      'photo-27.jpg',
+      'photo-33.jpg',
+      'photo-54.jpg',
+      'photo-81.jpg',
+      'photo-105.jpg',
+    ],
+    audioFile: '/static/audio/joshua.mp3',
+    shortDescription: "Joshua's photos",
+    longStory: joshuaTranscript,
+  },
+  {
+    id: 'msdfrew',
+    title: 'Martin',
+    href: 'martin',
+    mainImage: 'martin.jpg',
+    images: [
+      'photo-100.jpg',
+      'photo-101.jpg',
+      'photo-102.jpg',
+      'photo-103.jpg',
+      'photo-104.jpg',
+    ],
+    audioFile: '/static/audio/martin.mp3',
+    shortDescription: "Martin's photos",
+    longStory: martinTranscript,
+  },
   // {
   //   id: 'mie9sdxc',
   //   title: 'Michal',
@@ -275,7 +270,7 @@ const stories = [
   //     'photo-10.jpg',
   //     'photo-14.jpg',
   //   ],
-  //   audioFile: '',
+  //   audioFile: '/static/audio/',
   //   shortDescription: "Michal's photos",
   //   longStory: '',
   // },
@@ -291,7 +286,7 @@ const stories = [
   //     'photo-56.jpg',
   //     'photo-59.jpg',
   //   ],
-  //   audioFile: '',
+  //   audioFile: '/static/audio/',
   //   shortDescription: "Philip's photos",
   //   longStory: '',
   // },
@@ -307,7 +302,7 @@ const stories = [
   //     'photo-89.jpg',
   //     'photo-90.jpg',
   //   ],
-  //   audioFile: '',
+  //   audioFile: '/static/audio/',
   //   shortDescription: "Rahim's photos",
   //   longStory: '',
   // },
@@ -323,7 +318,7 @@ const stories = [
       'photo-72.jpg',
       'photo-73.jpg',
     ],
-    audioFile: 'stephen.mp3',
+    audioFile: '/static/audio/stephen.mp3',
     shortDescription: "Stephen's photos",
     longStory: stephenTranscript,
   },
@@ -339,7 +334,7 @@ const stories = [
   //     'photo-61.jpg',
   //     'photo-79.jpg',
   //   ],
-  //   audioFile: '',
+  //   audioFile: '/static/audio/',
   //   shortDescription: "Tim's photos",
   //   longStory: '',
   // },
@@ -355,7 +350,7 @@ const stories = [
   //     'photo-80.jpg',
   //     'photo-99.jpg',
   //   ],
-  //   audioFile: '',
+  //   audioFile: '/static/audio/',
   //   shortDescription: "Veritee and Barry's photos",
   //   longStory: '',
   // },

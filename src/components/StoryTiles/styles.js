@@ -16,7 +16,7 @@ export const Grid = styled.div`
 export const StoryTile = styled.div`
   display: flex;
   flex-direction: column;
-  padding-bottom: 24px; ;
+  padding-bottom: 12px;
 `;
 
 export const Title = styled.span`

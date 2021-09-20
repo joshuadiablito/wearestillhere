@@ -27,8 +27,6 @@ const OurResourcesPage = () => {
   `);
   const [page] = nodes;
 
-  console.log({ nodes, page });
-
   return (
     <Fragment>
       <SEO

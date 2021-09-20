@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import Cookies from 'js-cookie';
 
 import Context from '~/context/StoreContext';
-
+import CookiePolicy from '../components/CookiePolicy';
 import stories from './stories';
 
 const ContextProvider = ({ children }) => {
@@ -11,6 +12,7 @@ const ContextProvider = ({ children }) => {
   };
 
   const [store] = useState(initialStoreState);
+  const cookiePolicy = Cookies.get('cookie-policy') === 'true';
 
   return (
     <Context.Provider
@@ -18,7 +20,10 @@ const ContextProvider = ({ children }) => {
         store,
       }}
     >
-      {children}
+      <React.Fragment>
+        {children}
+        {!cookiePolicy && <CookiePolicy />}
+      </React.Fragment>
     </Context.Provider>
   );
 };

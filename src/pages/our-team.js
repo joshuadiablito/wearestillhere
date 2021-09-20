@@ -75,8 +75,12 @@ const OurTeamPage = () => {
         construction and power of narratives.
       </p>
       <Right>
-        <Image fixed={mareike.childImageSharp.width} alt="Mareike Günsche" />
-        <Caption>Mareike Günsche</Caption>
+        <Image
+          fixed={mareike.childImageSharp.width}
+          alt="Mareike Günsche - Copyright Claudia Leisinger"
+          title="Mareike Günsche - Copyright Claudia Leisinger"
+        />
+        <Caption>Mareike Günsche - Copyright Claudia Leisinger</Caption>
       </Right>
       <p>
         <strong>Mareike Günsche:</strong> is a London-based photographer and

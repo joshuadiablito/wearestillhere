@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useStaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql, Link } from 'gatsby';
 import styled from '@emotion/styled';
 import Image from 'gatsby-image';
 
@@ -29,6 +29,10 @@ const links = {
   'brigstow-institute-uob.png': {
     href: 'http://www.bristol.ac.uk/brigstow/',
     title: 'Brigstow Institute - University of Bristol',
+  },
+  'diablito-development.png': {
+    href: 'https://www.diablitodevelopment.com',
+    title: 'Diablito Development',
   },
   'scioltio.png': {
     href: '',
@@ -67,7 +71,6 @@ const FloatRight = styled.div`
 `;
 const Layout = ({ children }) => {
   const {
-    site,
     social: { nodes: social },
     sponsors: { nodes: sponsors },
   } = useStaticQuery(graphql`
@@ -94,21 +97,16 @@ const Layout = ({ children }) => {
           }
         }
       }
-      site {
-        siteMetadata {
-          title
-        }
-      }
     }
   `);
 
-  const [scioltio, bristol, brigstow, aspectus] = sponsors;
-  const newSponsors = [bristol, brigstow, aspectus, scioltio];
+  const [scioltio, bristol, brigstow, aspectus, diablito] = sponsors;
+  const newSponsors = [bristol, brigstow, aspectus, diablito, scioltio];
 
   return (
     <ContextProvider>
       <GlobalStyle />
-      <Navigation siteTitle={site.siteMetadata.title} />
+      <Navigation />
       <Wrapper>
         {children}
         <Block />
@@ -165,7 +163,10 @@ const Layout = ({ children }) => {
               </FloatRight>
             </GridRight>
           </TwoColumnGrid>
-          <p>&copy; We Are Still Here 2021</p>
+          <p>
+            &copy; We Are Still Here 2021 |{' '}
+            <Link to="/privacy">Privacy Policy</Link>
+          </p>
         </Footer>
       </Wrapper>
     </ContextProvider>

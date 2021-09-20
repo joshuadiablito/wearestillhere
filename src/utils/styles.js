@@ -16,9 +16,9 @@ export const GlobalStyle = props => (
     styles={css`
       body {
         margin: 0;
+        font-family: 'Arimo', 'Montserrat', sans-serif;
       }
       html {
-        font-family: sans-serif;
         -ms-text-size-adjust: 100%;
         -webkit-text-size-adjust: 100%;
       }

@@ -44,7 +44,6 @@ const StoryTiles = () => {
               >
                 <Img
                   fluid={image.node.fluid}
-                  alt={title}
                   imgStyle={{
                     objectFit: 'cover',
                     objectPosition: '50% 50%',
