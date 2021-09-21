@@ -4,6 +4,8 @@ import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
 
 function SEO({ description, lang, meta, keywords, title }) {
+  const newTitle = `${title} | We Are Still Here - Photography Exhibition in Bristol, UK`;
+
   return (
     <StaticQuery
       query={detailsQuery}
@@ -15,7 +17,7 @@ function SEO({ description, lang, meta, keywords, title }) {
             htmlAttributes={{
               lang,
             }}
-            title={title}
+            title={newTitle}
             titleTemplate={`%s | ${data.site.siteMetadata.title}`}
             meta={[
               {
@@ -24,7 +26,7 @@ function SEO({ description, lang, meta, keywords, title }) {
               },
               {
                 property: `og:title`,
-                content: title,
+                content: newTitle,
               },
               {
                 property: `og:description`,
@@ -33,6 +35,10 @@ function SEO({ description, lang, meta, keywords, title }) {
               {
                 property: `og:type`,
                 content: `website`,
+              },
+              {
+                property: 'og:image',
+                content: 'https://temp.wearestillhere.net/static/anita.jpeg',
               },
               {
                 name: `twitter:card`,
@@ -44,7 +50,7 @@ function SEO({ description, lang, meta, keywords, title }) {
               },
               {
                 name: `twitter:title`,
-                content: title,
+                content: newTitle,
               },
               {
                 name: `twitter:description`,
