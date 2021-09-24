@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-// const alanTranscript = require('./transcripts/alan');
+const alanTranscript = require('./transcripts/alan');
 const anitaTranscript = require('./transcripts/anita');
 // const ashleyTranscript = require('./transcripts/ashley');
 const beckyTranscript = require('./transcripts/becky');
@@ -24,22 +24,22 @@ const veriteeBarryTranscript = require('./transcripts/veritee-barry');
 /* eslint-enable no-undef */
 
 const stories = [
-  // {
-  //   id: '234sdf',
-  //   title: 'Alan',
-  //   href: 'alan',
-  //   mainImage: 'alan.jpg',
-  //   images: [
-  //     'photo-8.jpg',
-  //     'photo-12.jpg',
-  //     'photo-13.jpg',
-  //     'photo-20.jpg',
-  //     'photo-32.jpg',
-  //   ],
-  //   audioFile: '/static/audio/',
-  //   shortDescription: "Alan's photos",
-  //   longStory: '',
-  // },
+  {
+    id: '234sdf',
+    title: 'Alan',
+    href: 'alan',
+    mainImage: 'alan.jpg',
+    images: [
+      'photo-8.jpg',
+      'photo-12.jpg',
+      'photo-13.jpg',
+      'photo-20.jpg',
+      'photo-32.jpg',
+    ],
+    audioFile: '/static/audio/alan.mp3',
+    shortDescription: "Alan's photos",
+    longStory: alanTranscript,
+  },
   // {
   //   id: 'fgsdf43',
   //   title: 'Andy',

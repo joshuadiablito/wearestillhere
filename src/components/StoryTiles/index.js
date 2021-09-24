@@ -18,7 +18,7 @@ const StoryTiles = () => {
       allImageSharp {
         edges {
           node {
-            fluid {
+            fluid(maxWidth: 300) {
               ...GatsbyImageSharpFluid
               originalName
             }

@@ -1,5 +1,6 @@
 const path = require(`path`);
 const stories = require('./src/provider/stories');
+const template = path.resolve(`./src/templates/StoryPage/index.js`);
 
 exports.createPages = ({ actions }) => {
   const { createPage } = actions;
@@ -10,7 +11,7 @@ exports.createPages = ({ actions }) => {
 
       createPage({
         path: pathHref,
-        component: path.resolve(`./src/templates/StoryPage/index.js`),
+        component: template,
         context: {
           stories,
           story: {
