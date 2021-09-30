@@ -68,6 +68,7 @@ const OurTeamPage = () => {
       <SEO
         title="Our Team"
         keywords={['photography', 'exhibition', 'HIV', 'Bristol']}
+        ogImage={mareike.childImageSharp.width.src}
       />
       <Title>Our Team</Title>
       <p>

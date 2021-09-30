@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 export const BurgerMenuButton = styled.button`
   border: 0;
   background: none;
-  position: absolute;
+  position: fixed;
   right: 12px;
   top: 28px;
   outline: none;

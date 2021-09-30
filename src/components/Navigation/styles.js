@@ -19,7 +19,7 @@ export const MenuOverlay = styled.ul`
   list-style-type: none;
   margin: -24px 0 0 0;
   padding: 20px;
-  position: absolute;
+  position: fixed;
   right: 0;
   transform-origin: 0% 0%;
   transform: translate(100%, 0);

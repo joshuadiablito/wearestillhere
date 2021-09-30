@@ -33,6 +33,7 @@ const OurIntentionPage = () => {
       <SEO
         title="Our Intention"
         keywords={['photography', 'exhibition', 'HIV', 'Bristol']}
+        ogImage={page.fluid.src}
       />
       <Title>Our Intention</Title>
       <p>

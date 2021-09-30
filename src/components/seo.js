@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
 
-function SEO({ description, lang, meta, keywords, title }) {
+function SEO({ description, lang, meta, keywords, ogImage, title }) {
   const newTitle = `${title} | We Are Still Here - Photography Exhibition in Bristol, UK`;
 
   return (
@@ -12,6 +12,7 @@ function SEO({ description, lang, meta, keywords, title }) {
       render={data => {
         const metaDescription =
           description || data.site.siteMetadata.description;
+
         return (
           <Helmet
             htmlAttributes={{
@@ -38,7 +39,7 @@ function SEO({ description, lang, meta, keywords, title }) {
               },
               {
                 property: 'og:image',
-                content: 'https://temp.wearestillhere.net/static/anita.jpeg',
+                content: `https://www.wearestillhere.net${ogImage}`,
               },
               {
                 name: `twitter:card`,
@@ -110,6 +111,7 @@ function SEO({ description, lang, meta, keywords, title }) {
 SEO.defaultProps = {
   lang: `en`,
   meta: [],
+  ogImage: '/logo-white.png',
   keywords: [],
 };
 
@@ -117,6 +119,7 @@ SEO.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.array,
+  ogImage: PropTypes.string,
   keywords: PropTypes.arrayOf(PropTypes.string),
   title: PropTypes.string.isRequired,
 };

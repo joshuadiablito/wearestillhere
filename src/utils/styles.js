@@ -62,7 +62,7 @@ export const GridRight = styled.div`
 
 export const Block = styled.div`
   display: block;
-  height: 40px;
+  height: 12px;
   width: 100%;
   content: '';
 `;

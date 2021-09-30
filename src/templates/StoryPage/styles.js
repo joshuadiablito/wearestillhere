@@ -1,5 +1,7 @@
 import styled from '@emotion/styled';
 
+import { breakpoints } from '../../utils/styles';
+
 export const StoryTitle = styled.h1`
   font-size: 1.5rem;
   margin: 12px 0;
@@ -31,8 +33,4 @@ export const ProjectInfo = styled.p`
   font-size: 0.9rem;
   padding: 0;
   margin: 0 0 12px;
-`;
-
-export const Loader = styled.div`
-  min-height: 600px;
 `;

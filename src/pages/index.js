@@ -2,7 +2,6 @@ import React, { Fragment } from 'react';
 import loadable from '@loadable/component';
 
 import SEO from '~/components/seo';
-import StoryTilesLoader from '~/components/StoryTilesLoader';
 import { Title } from '~/utils/styles';
 import { ProjectInfo } from '../templates/StoryPage/styles';
 

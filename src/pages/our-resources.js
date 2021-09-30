@@ -33,6 +33,7 @@ const OurResourcesPage = () => {
       <SEO
         title="Our Resources"
         keywords={['photography', 'exhibition', 'HIV', 'Bristol']}
+        ogImage={page.fluid.src}
       />
       <Title>Our Resources</Title>
       <p>&lsquo;We Are Still Here&rsquo; provide resources</p>

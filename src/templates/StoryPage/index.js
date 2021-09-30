@@ -6,7 +6,7 @@ import SEO from '~/components/seo';
 
 import StoreContext from '../../context/StoreContext';
 import { Container, MainContent, Title } from '../../utils/styles';
-import { Breadcrumbs, Loader, StoryTitle, StoryDescription } from './styles';
+import { Breadcrumbs, StoryTitle, StoryDescription } from './styles';
 
 const ImageGallery = loadable(() => import('react-image-gallery'));
 const AudioPlayer = loadable(() => import('react-h5-audio-player'));
@@ -78,27 +78,29 @@ const StoryPage = ({ location }) => {
 
   return (
     <Fragment>
-      <SEO title={story.title} description={story.description} />
+      <SEO
+        title={story.title}
+        description={story.description}
+        ogImage={mainImage.childImageSharp.large.src}
+      />
       <Container>
         <MainContent>
           <Title>{story.title}</Title>
           <Breadcrumbs>
             <a href="/">Our Project</a> &raquo; <span>{story.title}</span>
           </Breadcrumbs>
-          <Loader>
-            <ImageGallery
-              items={imageGalleryImages}
-              lazyLoad
-              showPlayButton={false}
-              showBullets
-              showIndex
-              autoPlay
-            />
-          </Loader>
+          <ImageGallery
+            items={imageGalleryImages}
+            lazyLoad
+            showPlayButton={false}
+            showBullets
+            showIndex
+            autoPlay
+          />
           {story.audioFile && (
             <AudioPlayer src={story.audioFile} timeFormat="mm:ss" />
           )}
-          <StoryTitle>{story.title}'s story</StoryTitle>
+          <StoryTitle>{story.title}&apos;s story</StoryTitle>
           <StoryDescription
             dangerouslySetInnerHTML={{ __html: story.longStory }}
           />
