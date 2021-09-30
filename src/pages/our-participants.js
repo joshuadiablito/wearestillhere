@@ -3,6 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import Image from 'gatsby-image';
 import styled from '@emotion/styled';
 
+import { Title } from '~/utils/styles';
 import SEO from '~/components/seo';
 
 const ImageContainer = styled.div`
@@ -33,7 +34,7 @@ const OurParticipantsPage = () => {
         title="Our Participants"
         keywords={['photography', 'exhibition', 'HIV', 'Bristol']}
       />
-      <h1>Our Participants</h1>
+      <Title>Our Participants</Title>
       <p>
         &lsquo;We Are Still Here&rsquo; is a project that cannot live without
         its participants. Therefore we want to invite you to share your

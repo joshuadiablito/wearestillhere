@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 
+import { Title } from '~/utils/styles';
 import SEO from '~/components/seo';
 
 const PrivacyPolicyPage = () => {
@@ -10,7 +11,7 @@ const PrivacyPolicyPage = () => {
         keywords={['photography', 'exhibition', 'HIV', 'Bristol']}
       />
       <div>
-        <h1>Privacy Policy</h1>
+        <Title>Privacy Policy</Title>
         <p>Last updated: September 18, 2021</p>
         <p>
           This Privacy Policy describes Our policies and procedures on the

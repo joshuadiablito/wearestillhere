@@ -35,7 +35,7 @@
   "keywords": [],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby clean && gatsby build",
+    "build": "gatsby clean && yarn copy-audio-files && gatsby build",
     "dev": "gatsby develop",
     "copy-audio-files": "mkdir -p public/static/audio && rm -rf public/static/audio && cp -R src/audio public/static/audio",
     "start": "npm run dev",

@@ -26,6 +26,10 @@ export const GlobalStyle = props => (
   />
 );
 
+export const Title = styled.h1`
+  margin: 0 0 12px;
+`;
+
 export const Img = styled(Image)`
   max-width: 100 %;
   margin: 0;

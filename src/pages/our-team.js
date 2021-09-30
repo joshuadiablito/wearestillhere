@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import styled from '@emotion/styled';
 import Image from 'gatsby-image';
-import { breakpoints } from '~/utils/styles';
+import { breakpoints, Title } from '~/utils/styles';
 import SEO from '~/components/seo';
 
 const Left = styled.div`
@@ -69,7 +69,7 @@ const OurTeamPage = () => {
         title="Our Team"
         keywords={['photography', 'exhibition', 'HIV', 'Bristol']}
       />
-      <h1>Our Team</h1>
+      <Title>Our Team</Title>
       <p>
         What unites us as a team is our interest in storytelling and the
         construction and power of narratives.

@@ -1,13 +1,15 @@
 import React, { Fragment, useContext, useEffect } from 'react';
 import { navigate, useStaticQuery, graphql } from 'gatsby';
-import ImageGallery from 'react-image-gallery';
-import AudioPlayer from 'react-h5-audio-player';
+import loadable from '@loadable/component';
 
 import SEO from '~/components/seo';
 
 import StoreContext from '../../context/StoreContext';
-import { Container, MainContent } from '../../utils/styles';
-import { Breadcrumbs, StoryTitle, StoryDescription } from './styles';
+import { Container, MainContent, Title } from '../../utils/styles';
+import { Breadcrumbs, Loader, StoryTitle, StoryDescription } from './styles';
+
+const ImageGallery = loadable(() => import('react-image-gallery'));
+const AudioPlayer = loadable(() => import('react-h5-audio-player'));
 
 const StoryPage = ({ location }) => {
   const {
@@ -79,16 +81,20 @@ const StoryPage = ({ location }) => {
       <SEO title={story.title} description={story.description} />
       <Container>
         <MainContent>
+          <Title>{story.title}</Title>
           <Breadcrumbs>
             <a href="/">Our Project</a> &raquo; <span>{story.title}</span>
           </Breadcrumbs>
-          <ImageGallery
-            items={imageGalleryImages}
-            lazyLoad
-            showPlayButton={false}
-            showBullets
-            showIndex
-          />
+          <Loader>
+            <ImageGallery
+              items={imageGalleryImages}
+              lazyLoad
+              showPlayButton={false}
+              showBullets
+              showIndex
+              autoPlay
+            />
+          </Loader>
           {story.audioFile && (
             <AudioPlayer src={story.audioFile} timeFormat="mm:ss" />
           )}

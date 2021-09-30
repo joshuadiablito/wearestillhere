@@ -3,6 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import Image from 'gatsby-image';
 import styled from '@emotion/styled';
 
+import { Title } from '~/utils/styles';
 import SEO from '~/components/seo';
 
 const ImageContainer = styled.div`
@@ -33,7 +34,7 @@ const OurIntentionPage = () => {
         title="Our Intention"
         keywords={['photography', 'exhibition', 'HIV', 'Bristol']}
       />
-      <h1>Our Intention</h1>
+      <Title>Our Intention</Title>
       <p>
         We Are Still Here invites you into the homes of the HIV/AIDS community.
       </p>

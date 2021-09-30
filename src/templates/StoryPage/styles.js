@@ -26,3 +26,13 @@ export const Breadcrumbs = styled.aside`
   }
   padding-bottom: 12px;
 `;
+
+export const ProjectInfo = styled.p`
+  font-size: 0.9rem;
+  padding: 0;
+  margin: 0 0 12px;
+`;
+
+export const Loader = styled.div`
+  min-height: 600px;
+`;

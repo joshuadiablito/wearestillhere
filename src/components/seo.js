@@ -75,11 +75,13 @@ function SEO({ description, lang, meta, keywords, title }) {
             <link rel="preconnect" href="https://fonts.gstatic.com" />
             <link
               href="https://fonts.googleapis.com/css2?family=Arimo&display=swap"
-              rel="stylesheet"
+              rel="preload"
+              as="style"
             />
             <link
               href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap"
-              rel="stylesheet"
+              rel="preload"
+              as="style"
             />
             <script
               async

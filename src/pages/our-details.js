@@ -3,6 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import Image from 'gatsby-image';
 import styled from '@emotion/styled';
 
+import { Title } from '~/utils/styles';
 import SEO from '~/components/seo';
 
 const ImageContainer = styled.div`
@@ -33,7 +34,7 @@ const OurDetailsPage = () => {
         title="Our Details"
         keywords={['photography', 'exhibition', 'HIV', 'Bristol']}
       />
-      <h1>Our Details</h1>
+      <Title>Our Details</Title>
       <p>
         Please get in touch with us if you have any questions. Also please reach
         out to us if you want to participate.{' '}
