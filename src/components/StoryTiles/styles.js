@@ -19,7 +19,7 @@ export const StoryTile = styled.div`
   padding-bottom: 12px;
 `;
 
-export const Title = styled.span`
+export const TitleBlock = styled.span`
   display: block;
   font-weight: 300;
   font-size: 1rem;

@@ -1,10 +1,12 @@
 import React, { useContext } from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 
+import { Title } from '~/utils/styles';
+
 import StoreContext from '../../context/StoreContext';
 import { Img } from '../../utils/styles';
 
-import { Grid, StoryTile, Title } from './styles';
+import { Grid, StoryTile, TitleBlock } from './styles';
 
 const StoryTiles = () => {
   const {
@@ -49,7 +51,7 @@ const StoryTiles = () => {
                     objectPosition: '50% 50%',
                   }}
                 />
-                <Title>{title}</Title>
+                <TitleBlock>{title}</TitleBlock>
               </Link>
             </StoryTile>
           );

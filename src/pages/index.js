@@ -28,6 +28,7 @@ const IndexPage = () => (
       We invite you to meet our brave participants who have come forward to talk
       candidly about their lived experiences with the virus known as HIV...
     </ProjectInfo>
+    <StoryTilesLoader />
     <StoryTiles />
   </Fragment>
 );
