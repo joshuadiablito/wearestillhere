@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { useStaticQuery, graphql, Link } from 'gatsby';
 import styled from '@emotion/styled';
 import Image from 'gatsby-image';
-import loadable from '@loadable/component';
 
 import ContextProvider from '~/provider/ContextProvider';
 import {
@@ -14,10 +13,9 @@ import {
   GridLeft,
   GridRight,
 } from '~/utils/styles';
+import Navigation from '../components/Navigation';
 
 import './styles.css';
-
-const Navigation = loadable(() => import('../components/Navigation'));
 
 const links = {
   'aspectus.jpg': {

@@ -170,10 +170,10 @@ const stories = [
     mainImage: 'john.jpg',
     images: [
       'photo-38.jpg',
+      'aphoto-196.jpg',
       'photo-97.jpg',
-      'photo-39.jpg',
+      'photo-390.jpg',
       'photo-40.jpg',
-      'photo-96.jpg',
     ],
     audioFile: '/static/audio/john.mp3',
     shortDescription: "John's photos",

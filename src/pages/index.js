@@ -4,8 +4,11 @@ import loadable from '@loadable/component';
 import SEO from '~/components/seo';
 import { Title } from '~/utils/styles';
 import { ProjectInfo } from '../templates/StoryPage/styles';
+import StoryTilesLoader from '../components/StoryTilesLoader';
 
-const StoryTiles = loadable(() => import('../components/StoryTiles'));
+const StoryTiles = loadable(() => import('../components/StoryTiles'), {
+  fallback: <StoryTilesLoader />,
+});
 
 const IndexPage = () => (
   <Fragment>
@@ -25,9 +28,8 @@ const IndexPage = () => (
     </ProjectInfo>
     <ProjectInfo>
       We invite you to meet our brave participants who have come forward to talk
-      candidly about their lived experiences with the virus known as HIV...
+      candidly about their lived experiences with the virus known as HIV.
     </ProjectInfo>
-    <StoryTilesLoader />
     <StoryTiles />
   </Fragment>
 );

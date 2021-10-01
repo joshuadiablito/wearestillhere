@@ -1,5 +1,6 @@
-import styled from '@emotion/styled';
 import React from 'react';
+import { Global, css } from '@emotion/react';
+import styled from '@emotion/styled';
 
 import { breakpoints } from '../../utils/styles';
 
@@ -15,35 +16,55 @@ const Grid = styled.div`
 `;
 
 const StoryTile = styled.div`
+  background-color: #dddbdd;
+  border-radius: 4px;
   display: flex;
   flex-direction: column;
+  height: 220px;
+  overflow: hidden;
   padding-bottom: 12px;
+  position: relative;
+  width: 300px;
 
-  &::before {
-    content: '';
-    display: block;
-    position: absolute;
-    left: -150px;
-    top: 0;
-    height: 100%;
-    width: 150px;
+  ::after {
     background: linear-gradient(
-      to right,
-      transparent 0%,
-      #e8e8e8 50%,
-      transparent 100%
+      90deg,
+      rgba(255, 255, 255, 0) 0,
+      rgba(255, 255, 255, 0.2) 20%,
+      rgba(255, 255, 255, 0.5) 60%,
+      rgba(255, 255, 255, 0)
     );
-    animation: load 1s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateX(-100%);
+    animation: shimmer 2s infinite;
   }
 `;
 
 const StoryTilesLoader = () => {
   return (
     <Grid>
-      <StoryTile />
-      <StoryTile />
-      <StoryTile />
-      <StoryTile />
+      <Global
+        styles={css`
+          @keyframes shimmer {
+            100% {
+              transform: translateX(100%);
+            }
+          }
+          @keyframes load {
+            from {
+              left: -150px;
+            }
+            to {
+              left: 100%;
+            }
+          }
+        `}
+      />
       <StoryTile />
       <StoryTile />
       <StoryTile />

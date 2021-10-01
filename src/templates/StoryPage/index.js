@@ -55,6 +55,12 @@ const StoryPage = ({ location }) => {
         story.images.indexOf(childImageSharp.small.originalName) >= 0
       );
     })
+    .sort((a, b) =>
+      a.childImageSharp.large.originalName >
+      b.childImageSharp.large.originalName
+        ? 1
+        : -1
+    )
     .map(({ childImageSharp }) => {
       return {
         original: childImageSharp.large.src,
@@ -95,7 +101,6 @@ const StoryPage = ({ location }) => {
             showPlayButton={false}
             showBullets
             showIndex
-            autoPlay
           />
           {story.audioFile && (
             <AudioPlayer src={story.audioFile} timeFormat="mm:ss" />
