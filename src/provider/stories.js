@@ -11,14 +11,14 @@ const jideTranscript = require('./transcripts/jide');
 const johnTranscript = require('./transcripts/john');
 const jonathanTranscript = require('./transcripts/jonathan');
 const joseTranscript = require('./transcripts/jose');
-// const joshTranscript = require('./transcripts/josh');
+const joshTranscript = require('./transcripts/josh');
 const joshuaTranscript = require('./transcripts/joshua');
 const martinTranscript = require('./transcripts/martin');
 const michalTranscript = require('./transcripts/michal');
 const philipTranscript = require('./transcripts/philip');
 const rahimTranscript = require('./transcripts/rahim');
 const stephenTranscript = require('./transcripts/stephen');
-// const timTranscript = require('./transcripts/tim');
+const timTranscript = require('./transcripts/tim');
 const veriteeBarryTranscript = require('./transcripts/veritee-barry');
 
 /* eslint-enable no-undef */
@@ -211,22 +211,22 @@ const stories = [
     shortDescription: "Jose's photos",
     longStory: joseTranscript,
   },
-  // {
-  //   id: 'po123dsa',
-  //   title: 'Josh',
-  //   href: 'josh',
-  //   mainImage: 'josh.jpg',
-  //   images: [
-  //     'photo-35.jpg',
-  //     'photo-62.jpg',
-  //     'photo-63.jpg',
-  //     'photo-64.jpg',
-  //     'photo-68.jpg',
-  //   ],
-  //   audioFile: '/static/audio/',
-  //   shortDescription: "Josh's photos",
-  //   longStory: '',
-  // },
+  {
+    id: 'po123dsa',
+    title: 'Josh',
+    href: 'josh',
+    mainImage: 'josh.jpg',
+    images: [
+      'photo-35.jpg',
+      'photo-62.jpg',
+      'photo-63.jpg',
+      'photo-64.jpg',
+      'photo-68.jpg',
+    ],
+    audioFile: '/static/audio/josh.mp3',
+    shortDescription: "Josh's photos",
+    longStory: joshTranscript,
+  },
   {
     id: 'joshdsasdfa',
     title: 'Joshua',
@@ -323,22 +323,22 @@ const stories = [
     shortDescription: "Stephen's photos",
     longStory: stephenTranscript,
   },
-  // {
-  //   id: 'tim213123',
-  //   title: 'Tim',
-  //   href: 'tim',
-  //   mainImage: 'tim.jpg',
-  //   images: [
-  //     'photo-24.jpg',
-  //     'photo-58.jpg',
-  //     'photo-60.jpg',
-  //     'photo-61.jpg',
-  //     'photo-79.jpg',
-  //   ],
-  //   audioFile: '/static/audio/',
-  //   shortDescription: "Tim's photos",
-  //   longStory: '',
-  // },
+  {
+    id: 'tim213123',
+    title: 'Tim',
+    href: 'tim',
+    mainImage: 'tim.jpg',
+    images: [
+      'photo-24.jpg',
+      'photo-58.jpg',
+      'photo-60.jpg',
+      'photo-61.jpg',
+      'photo-79.jpg',
+    ],
+    audioFile: '/static/audio/tim.mp3',
+    shortDescription: "Tim's photos",
+    longStory: timTranscript,
+  },
   {
     id: 'verbar213sdf',
     title: 'Veritee and Barry',

@@ -22,7 +22,7 @@ So I guess as a gay man it&rsquo;s not like I feel I&rsquo;m in a space when I&r
 </p>
 <p>
 I would say HIV hasn&rsquo;t affected my living situation. I was flatting with friends and ex-colleagues at various points when I was living in London and it wasn&rsquo;t an issue. They knew that I had HIV. I had told them about it. I came out quite publicly at work. I told people at work about it so working with these people and then living with them it wasn&rsquo;t, it wasn&rsquo;t an issue at any point but I could understand how it might if you haven&rsquo;t been as open as I was that, even hiding your medication or anything like that, of a very practical nature, how it can affect your living situation.
-</p>
+</p>  
 <p>
 HIV did affect my closest relationships, not in a way that it destroyed them or they stopped being my closest relationships generally. It actually brought me closer to a lot of my friends. People responded in really strange ways like going from thinking I was going to die to having this more admiration and respect for me as a person because of the hardship I&rsquo;ve been through. Some people, like, it wouldn&rsquo;t be a good thing, it wouldn&rsquo;t be a bad thing, it would just be another thing to the relationship and that&rsquo;s totally fine as well but I definitely felt closer to a lot of my friends after I told them, and continue to feel close to those people because of the, kind of the shared trauma because they were with me when I was in the thick of it when it was really challenging for me and they&rsquo;re with me today as some of my best friends still.
 </p>
