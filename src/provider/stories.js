@@ -1,7 +1,8 @@
 /* eslint-disable no-undef */
 const alanTranscript = require('./transcripts/alan');
+const andyTranscript = require('./transcripts/andy');
 const anitaTranscript = require('./transcripts/anita');
-// const ashleyTranscript = require('./transcripts/ashley');
+const ashleyTranscript = require('./transcripts/ashley');
 const beckyTranscript = require('./transcripts/becky');
 const emilyTranscript = require('./transcripts/emily');
 const florenceTranscript = require('./transcripts/florence');
@@ -40,22 +41,22 @@ const stories = [
     shortDescription: "Alan's photos",
     longStory: alanTranscript,
   },
-  // {
-  //   id: 'fgsdf43',
-  //   title: 'Andy',
-  //   href: 'andy',
-  //   mainImage: 'andy.jpg',
-  //   images: [
-  //     'photo-25.jpg',
-  //     'photo-26.jpg',
-  //     'photo-28.jpg',
-  //     'photo-29.jpg',
-  //     'photo-30.jpg',
-  //   ],
-  //   audioFile: '/static/audio/',
-  //   shortDescription: "Andy's photos",
-  //   longStory: '',
-  // },
+  {
+    id: 'fgsdf43',
+    title: 'Andy',
+    href: 'andy',
+    mainImage: 'andy.jpg',
+    images: [
+      'photo-25.jpg',
+      'photo-26.jpg',
+      'photo-28.jpg',
+      'photo-29.jpg',
+      'photo-30.jpg',
+    ],
+    audioFile: '/static/audio/andy.mp3',
+    shortDescription: "Andy's photos",
+    longStory: andyTranscript,
+  },
   {
     id: 'xcbxcv32',
     title: 'Anita',
@@ -72,23 +73,23 @@ const stories = [
     shortDescription: "Anita's photos",
     longStory: anitaTranscript,
   },
-  // {
-  //   id: 'lkj@£2',
-  //   title: 'Ashley',
-  //   href: 'ashley',
-  //   mainImage: 'ashley.jpg',
-  //   images: [
-  //     'photo-999.jpg',
-  //     'photo-91.jpg',
-  //     'photo-92.jpg',
-  //     'photo-93.jpg',
-  //     'photo-94.jpg',
-  //     'photo-95.jpg',
-  //   ],
-  //   audioFile: '/static/audio/',
-  //   shortDescription: "Ashley's photos",
-  //   longStory: '',
-  // },
+  {
+    id: 'lkj@£2',
+    title: 'Ashley',
+    href: 'ashley',
+    mainImage: 'ashley.jpg',
+    images: [
+      'photo-999.jpg',
+      'photo-91.jpg',
+      'photo-92.jpg',
+      'photo-93.jpg',
+      'photo-94.jpg',
+      'photo-95.jpg',
+    ],
+    audioFile: '/static/audio/ashley.mp3',
+    shortDescription: "Ashley's photos",
+    longStory: ashleyTranscript,
+  },
   {
     id: 'vsxcx33',
     title: 'Becky',
